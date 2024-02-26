@@ -1,0 +1,233 @@
+#!/usr/bin/osascript -l JavaScript
+
+// Helpers
+function envVar(varName) {
+  return $.NSProcessInfo
+    .processInfo
+    .environment
+    .objectForKey(varName).js
+}
+
+function fileExists(path) {
+  return $.NSFileManager.defaultManager.fileExistsAtPath(path)
+}
+
+function fileModified(path) {
+  return $.NSFileManager.defaultManager
+    .attributesOfItemAtPathError(path, undefined)
+    .js["NSFileModificationDate"].js
+    .getTime()
+}
+
+function deleteFile(path) {
+  return $.NSFileManager.defaultManager.removeItemAtPathError(path, undefined)
+}
+
+function writeFile(path, text) {
+  $(text).writeToFileAtomicallyEncodingError(path, true, $.NSUTF8StringEncoding, undefined)
+}
+
+function readChat(path) {
+  const chatString = $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, undefined).js
+  return JSON.parse(chatString)
+}
+
+function appendChat(path, message) {
+  const ongoingChat = readChat(path).concat(message)
+  const chatString = JSON.stringify(ongoingChat)
+  writeFile(path, chatString)
+}
+
+function markdownChat(messages, ignoreLastInterrupted = true) {
+  return messages.reduce((accumulator, current, index, allMessages) => {
+    if (current["role"] === "assistant")
+      return `${accumulator}${current["content"]}\n\n`
+
+    if (current["role"] === "user") {
+      const userTwice = allMessages[index + 1]?.["role"] === "user" // "user" role twice in a row
+      const lastMessage = index === allMessages.length - 1 // "user is last message
+
+      return userTwice || (lastMessage && !ignoreLastInterrupted) ?
+        `${accumulator}### ${current["content"]}\n\n[Answer Interrupted]\n\n` :
+        `${accumulator}### ${current["content"]}\n\n`
+    }
+
+    // Ignore any other role
+    return accumulator
+  }, "")
+}
+
+function startStream(apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
+  $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create emtpy file
+
+  const messages = systemPrompt ?
+    [{ role: "system", content: systemPrompt }].concat(ongoingChat) :
+    ongoingChat
+
+  const task = $.NSTask.alloc.init
+  const stdout = $.NSPipe.pipe
+
+  task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
+  task.arguments = [
+    "https://api.openai.com/v1/chat/completions",
+    "--speed-limit", "0", "--speed-time", "5", // Abort stalled connection after a few seconds
+    "--silent", "--no-buffer",
+    "--header", "Content-Type: application/json",
+    "--header", `Authorization: Bearer ${apiKey}`,
+    "--data", JSON.stringify({ model: model, messages: messages, stream: true }),
+    "--output", streamFile
+  ]
+
+  task.standardOutput = stdout
+  task.launchAndReturnError(false)
+  writeFile(pidStreamFile, task.processIdentifier.toString())
+}
+
+function readStream(streamFile, chatFile, pidStreamFile) {
+  const streamMarker = envVar("stream_marker") === "1"
+  const streamString = $.NSString.stringWithContentsOfFileEncodingError(streamFile, $.NSUTF8StringEncoding, undefined).js
+
+  // When starting a stream or continuing from a closed window, add a marker to determine the location of future replacements
+  if (streamMarker) return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: true },
+    response: "…",
+    behaviour: { response: "append" }
+  })
+
+  // If response looks like proper JSON, it is probably an error
+  if (streamString.startsWith("{")) {
+    try {
+      const errorMessage = JSON.parse(streamString)["error"]["message"]
+
+      if (errorMessage) return JSON.stringify({
+        response: `[${errorMessage}]`, // Surround in square brackets to look like other messages
+        behaviour: { response: "replacelast" }
+      })
+
+      throw "Could not determine error message" // Fallback to the catch
+    } catch {
+      // If it's not an error from the API, log file contents
+      console.log(streamString)
+
+      return JSON.stringify({
+        response: streamString,
+        behaviour: { response: "replacelast" }
+      })
+    }
+  }
+
+  // Parse streaming response
+  const chunks = streamString
+    .split("\n") // Split into lines
+    .map(item => item.replace(/^data: /, "")) // Remove extraneous "data: "
+    .filter(item => item.startsWith("{")) // Only grab lines which could be expected JSON
+    .map(item => JSON.parse(item)) // Parse as JSON
+
+  const responseText = chunks.map(item => item["choices"][0]["delta"]["content"]).join("")
+
+  // If File not modified for over 5 seconds, connection stalled
+  const stalled = new Date().getTime() - fileModified(streamFile) > 5000
+
+  if (stalled) {
+    // Write incomplete response
+    if (responseText.length > 0) appendChat(chatFile, { role: "assistant", content: responseText })
+
+    // Delete stream files
+    deleteFile(streamFile)
+    deleteFile(pidStreamFile)
+
+    // Stop
+    return JSON.stringify({
+      response: `${responseText} [Connection Stalled]`,
+      footer: "You can ask ChatGPT to continue the answer",
+      behaviour: { response: "replacelast", scroll: "end" }
+    })
+  }
+
+  // If file is empty, we were too fast and will try again on next loop
+  if (streamString.length === 0) return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: true }
+  })
+
+  // Last token finish reason
+  const finishReason = chunks.slice(-1)[0]["choices"][0]["finish_reason"]
+
+  // If reponse is not finished, continue loop
+  if (finishReason === null) return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: true },
+    response: responseText,
+    behaviour: { response: "replacelast", scroll: "end" }
+  })
+
+  // When finished, write history and delete stream files
+  appendChat(chatFile, { role: "assistant", content: responseText })
+  deleteFile(streamFile)
+  deleteFile(pidStreamFile)
+
+  // Mention finish reason in footer
+  const footerText = (function() {
+    switch (finishReason) {
+      case "legth": return "Maximum number of tokens reached"
+      case "content_filter": return "Content was omitted due to a flag from OpenAI content filters"
+    }
+  })()
+
+  // Stop
+  return JSON.stringify({
+    response: responseText,
+    footer: footerText,
+    behaviour: { response: "replacelast", scroll: "end" }
+  })
+}
+
+// Main
+function run(argv) {
+  // Constant data
+  const typedQuery = argv[0]
+  const maxEntries = 100
+  const apiKey = envVar("openai_api_key")
+  const systemPrompt = envVar("system_prompt")
+  const model = envVar("gpt_model")
+  const pidStreamFile = `${envVar("alfred_workflow_cache")}/pid.txt`
+  const chatFile = `${envVar("alfred_workflow_cache")}/chat.json`
+  const streamFile = `${envVar("alfred_workflow_cache")}/stream.txt`
+  const streamingNow = envVar("streaming_now") === "1"
+
+  // If continually reading from a stream, continue that loop
+  if (streamingNow) return readStream(streamFile, chatFile, pidStreamFile)
+
+  // Load previous conversation and cap to maximum size
+  const previousChat = readChat(chatFile).slice(-maxEntries)
+
+  // If "streaming_now" is unset but stream file exists, the window was closed mid-stream
+  // Reload conversation and rerun to resume stream
+  if (fileExists(streamFile)) return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: true, stream_marker: true },
+    response: markdownChat(previousChat, true),
+    behaviour: { scroll: "end" }
+  })
+
+  // If argument is empty, return previous conversation
+  if (typedQuery.length === 0) return JSON.stringify({
+    response: markdownChat(previousChat, false),
+    behaviour: { scroll: "end" }
+  })
+
+  // Append new question to chat
+  const appendQuery = { role: "user", content: typedQuery }
+  const ongoingChat = previousChat.concat(appendQuery)
+
+  // Make API request, write chat file, and start loop
+  startStream(apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
+  appendChat(chatFile, appendQuery)
+
+  return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: true, stream_marker: true },
+    response: markdownChat(ongoingChat)
+  })
+}
