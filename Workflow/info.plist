@@ -795,7 +795,7 @@ function run() {
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>clear_chat</string>
+				<string>new_chat</string>
 				<key>passinputasargument</key>
 				<false/>
 				<key>passvariables</key>
