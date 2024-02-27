@@ -328,6 +328,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>EBC293B5-1DF7-40CF-BA77-A549FC6B5415</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>19467065-1FA8-4C92-9F58-797A122BE296</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>F4D88498-0A97-492F-989F-26182BFEEE31</key>
 		<array>
 			<dict>
@@ -888,6 +901,21 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>ask</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>EBC293B5-1DF7-40CF-BA77-A549FC6B5415</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -1207,6 +1235,13 @@ Query DALL·E via the `dalle` keyword.
 			<real>1405</real>
 			<key>ypos</key>
 			<real>165</real>
+		</dict>
+		<key>EBC293B5-1DF7-40CF-BA77-A549FC6B5415</key>
+		<dict>
+			<key>xpos</key>
+			<real>70</real>
+			<key>ypos</key>
+			<real>415</real>
 		</dict>
 		<key>F4D88498-0A97-492F-989F-26182BFEEE31</key>
 		<dict>
