@@ -1261,10 +1261,6 @@ Query DALL·E via the `dalle` keyword.
 						<string>GPT-4</string>
 						<string>gpt-4</string>
 					</array>
-					<array>
-						<string>GTP-4 32K</string>
-						<string>gpt-4-32k</string>
-					</array>
 				</array>
 			</dict>
 			<key>description</key>
