@@ -366,6 +366,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FA725E90-6083-4024-B085-AA1FBAD00591</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>19467065-1FA8-4C92-9F58-797A122BE296</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Vítor Galvão</string>
@@ -627,6 +640,8 @@ function run() {
 				<integer>2</integer>
 				<key>fontmode</key>
 				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
 				<key>footertext</key>
 				<string>↩ New question · ⌘↩ Restart chat · ⌥↩ Copy last · ⌃↩ Copy all · ⇧↩ Interrupt</string>
 				<key>inputfile</key>
@@ -639,6 +654,8 @@ function run() {
 				<integer>1</integer>
 				<key>scriptinput</key>
 				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
 				<key>stackview</key>
 				<false/>
 			</dict>
@@ -689,23 +706,15 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>{var:chatgpt_keyword}</string>
-				<key>skipuniversalaction</key>
-				<true/>
-				<key>subtext</key>
-				<string>↩ Continue chat · ⌘↩ Force start a new chat</string>
-				<key>text</key>
-				<string>Ask ChatGPT</string>
-				<key>withspace</key>
-				<true/>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>continue_chat</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>BF340515-39CD-47C9-965D-B1631A3BF45F</string>
+			<string>FA725E90-6083-4024-B085-AA1FBAD00591</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -873,6 +882,29 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>{var:chatgpt_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>↩ Continue chat · ⌘↩ Force start a new chat</string>
+				<key>text</key>
+				<string>Ask ChatGPT</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BF340515-39CD-47C9-965D-B1631A3BF45F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
@@ -935,6 +967,8 @@ function run() {
 				<integer>2</integer>
 				<key>fontmode</key>
 				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
 				<key>footertext</key>
 				<string>↩ New prompt · ⌥↩ Reveal most recent image</string>
 				<key>inputfile</key>
@@ -947,6 +981,8 @@ function run() {
 				<integer>0</integer>
 				<key>scriptinput</key>
 				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
 				<key>stackview</key>
 				<false/>
 			</dict>
@@ -1185,7 +1221,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>410</real>
 		</dict>
 		<key>C05A6557-586B-4B86-AFFB-459590991D55</key>
 		<dict>
@@ -1221,6 +1257,13 @@ Query DALL·E via the `dalle` keyword.
 			<real>505</real>
 			<key>ypos</key>
 			<real>300</real>
+		</dict>
+		<key>FA725E90-6083-4024-B085-AA1FBAD00591</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>280</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
