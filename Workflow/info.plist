@@ -1272,6 +1272,27 @@ Query DALL·E via the `dalle` keyword.
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Get it at https://platform.openai.com/api-keys</string>
+			<key>label</key>
+			<string>OpenAI API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>openai_api_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>chatgpt</string>
 				<key>placeholder</key>
 				<string></string>
@@ -1499,27 +1520,6 @@ Query DALL·E via the `dalle` keyword.
 			<string>slider</string>
 			<key>variable</key>
 			<string>dalle_image_number</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string></string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Get it at https://platform.openai.com/api-keys</string>
-			<key>label</key>
-			<string>OpenAI API Key</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>openai_api_key</string>
 		</dict>
 	</array>
 	<key>version</key>
