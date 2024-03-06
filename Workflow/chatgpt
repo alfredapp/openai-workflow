@@ -101,10 +101,16 @@ function readStream(streamFile, chatFile, pidStreamFile) {
     try {
       const errorMessage = JSON.parse(streamString)["error"]["message"]
 
-      if (errorMessage) return JSON.stringify({
-        response: `[${errorMessage}]`, // Surround in square brackets to look like other messages
-        behaviour: { response: "replacelast" }
-      })
+      if (errorMessage) {
+        // Delete stream files
+        deleteFile(streamFile)
+        deleteFile(pidStreamFile)
+
+        return JSON.stringify({
+          response: `[${errorMessage}]  \n(${(new Date).toUTCString()})`, // Surround in square brackets to look like other messages
+          behaviour: { response: "replacelast" }
+        })
+      }
 
       throw "Could not determine error message" // Fallback to the catch
     } catch {
