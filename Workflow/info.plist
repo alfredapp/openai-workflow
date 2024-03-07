@@ -1528,7 +1528,7 @@ Query DALL·E via the `dalle` keyword.
 		<string>https://api.openai.com</string>
 	</dict>
 	<key>version</key>
-	<string>2024.3</string>
+	<string>2024.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/openai-workflow/</string>
 </dict>
