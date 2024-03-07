@@ -1522,6 +1522,11 @@ Query DALL·E via the `dalle` keyword.
 			<string>dalle_image_number</string>
 		</dict>
 	</array>
+	<key>variables</key>
+	<dict>
+		<key>chatgpt_api_endpoint</key>
+		<string>https://api.openai.com</string>
+	</dict>
 	<key>version</key>
 	<string>2024.3</string>
 	<key>webaddress</key>

@@ -58,7 +58,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
   }, "")
 }
 
-function startStream(apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
+function startStream(apiEndpoint, apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
   $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create emtpy file
 
   const messages = systemPrompt ?
@@ -70,7 +70,7 @@ function startStream(apiKey, model, systemPrompt, ongoingChat, streamFile, pidSt
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
-    "https://api.openai.com/v1/chat/completions",
+    `${apiEndpoint}/v1/chat/completions`,
     "--speed-limit", "0", "--speed-time", "5", // Abort stalled connection after a few seconds
     "--silent", "--no-buffer",
     "--header", "Content-Type: application/json",
@@ -196,6 +196,7 @@ function run(argv) {
   const typedQuery = argv[0]
   const maxEntries = 100
   const apiKey = envVar("openai_api_key")
+  const apiEndpoint = envVar("chatgpt_api_endpoint")
   const systemPrompt = envVar("system_prompt")
   const model = envVar("gpt_model")
   const pidStreamFile = `${envVar("alfred_workflow_cache")}/pid.txt`
@@ -229,7 +230,7 @@ function run(argv) {
   const ongoingChat = previousChat.concat(appendQuery)
 
   // Make API request, write chat file, and start loop
-  startStream(apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
+  startStream(apiEndpoint, apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
   appendChat(chatFile, appendQuery)
 
   return JSON.stringify({
