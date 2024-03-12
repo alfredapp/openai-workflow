@@ -1318,12 +1318,16 @@ Query DALL·E via the `dalle` keyword.
 				<key>pairs</key>
 				<array>
 					<array>
-						<string>GPT-3.5</string>
+						<string>GPT-3.5 Turbo</string>
 						<string>gpt-3.5-turbo</string>
 					</array>
 					<array>
 						<string>GPT-4</string>
 						<string>gpt-4</string>
+					</array>
+					<array>
+						<string>GPT-4 Turbo (preview)</string>
+						<string>gpt-4-turbo-preview</string>
 					</array>
 				</array>
 			</dict>
