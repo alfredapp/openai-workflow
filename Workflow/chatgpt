@@ -131,7 +131,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
     .filter(item => item.startsWith("{")) // Only grab lines which could be expected JSON
     .map(item => JSON.parse(item)) // Parse as JSON
 
-  const responseText = chunks.map(item => item["choices"][0]["delta"]["content"]).join("")
+  const responseText = chunks.map(item => item["choices"][0]?.["delta"]["content"]).join("")
 
   // If File not modified for over 5 seconds, connection stalled
   const stalled = new Date().getTime() - fileModified(streamFile) > 5000
