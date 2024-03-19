@@ -1530,6 +1530,8 @@ Query DALL·E via the `dalle` keyword.
 	<dict>
 		<key>chatgpt_api_endpoint</key>
 		<string>https://api.openai.com</string>
+		<key>dalle_api_endpoint</key>
+		<string>https://api.openai.com</string>
 	</dict>
 	<key>version</key>
 	<string>2024.5</string>
