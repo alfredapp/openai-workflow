@@ -75,6 +75,7 @@ function run(argv) {
   const typedQuery = argv[0]
   const maxEntries = 10
   const apiKey = envVar("openai_api_key")
+  const organizationId = envVar("openai_organization_id")
   const model = envVar("dalle_model")
   const imageNumber = parseInt(envVar("dalle_image_number"))
   const imageStyle = envVar("dalle_style")
@@ -126,6 +127,10 @@ function run(argv) {
       size: "1024x1024"
     })
   ]
+
+  if (organizationId && organizationId.trim() !== "") {
+    taskArguments.push("--header", `OpenAI-Organization: ${organizationId}`);
+  }
 
   task.standardOutput = stdout
   task.launchAndReturnError(false)
