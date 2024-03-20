@@ -76,7 +76,7 @@ function run(argv) {
   const maxEntries = 10
   const apiKey = envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
-  const apiEndpoint = envVar("dalle_api_endpoint")
+  const apiEndpoint = envVar("dalle_api_endpoint") || "https://api.openai.com"
   const model = envVar("dalle_model")
   const imageNumber = parseInt(envVar("dalle_image_number"))
   const imageStyle = envVar("dalle_style")
