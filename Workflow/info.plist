@@ -303,6 +303,19 @@
 				<true/>
 			</dict>
 		</array>
+		<key>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>19467065-1FA8-4C92-9F58-797A122BE296</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
 		<array>
 			<dict>
@@ -390,6 +403,19 @@
 	<string>ChatGPT / DALL-E</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>text</key>
+				<string>Ask ChatGPT '{query}'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.fallback</string>
+			<key>uid</key>
+			<string>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -1057,6 +1083,8 @@ Query ChatGPT via the `chatgpt` keyword.
 * &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy full chat.
 * &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Stop generating answer.
 
+A [Fallback Search](https://www.alfredapp.com/help/features/default-results/fallback-searches/) is included.
+
 Query DALL·E via the `dalle` keyword.
 
 ![Start DALL-E query](images/about/dallekeyword.png)
@@ -1236,6 +1264,13 @@ Query DALL·E via the `dalle` keyword.
 			<real>65</real>
 			<key>ypos</key>
 			<real>195</real>
+		</dict>
+		<key>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>60</real>
 		</dict>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
 		<dict>
@@ -1554,8 +1589,6 @@ Query DALL·E via the `dalle` keyword.
 		<key>dalle_api_endpoint</key>
 		<string>https://api.openai.com</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>2024.5</string>
 	<key>webaddress</key>
