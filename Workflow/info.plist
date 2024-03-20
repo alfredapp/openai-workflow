@@ -150,7 +150,7 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -274,7 +274,7 @@
 				<key>modifiersubtext</key>
 				<string>Ask and force start a new conversation</string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>C05A6557-586B-4B86-AFFB-459590991D55</key>
@@ -1072,7 +1072,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>1075</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>225</real>
 		</dict>
 		<key>02627B69-31FA-4441-A186-B2095B6F40B9</key>
 		<dict>
@@ -1081,189 +1081,189 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>1180</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>195</real>
 		</dict>
 		<key>055D6B34-9A00-49B7-A135-3686D0911EEA</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>410</real>
+			<real>460</real>
 		</dict>
 		<key>19467065-1FA8-4C92-9F58-797A122BE296</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>360</real>
 		</dict>
 		<key>2345B220-18B0-4F70-9DD7-B7A20763FFBC</key>
 		<dict>
 			<key>xpos</key>
 			<real>1545</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>210</real>
 		</dict>
 		<key>2EF95279-1807-40A5-B729-78040FF36DE3</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>440</real>
+			<real>490</real>
 		</dict>
 		<key>2F3B5565-0BBD-4DC6-962B-BEF7277AC599</key>
 		<dict>
 			<key>xpos</key>
 			<real>1330</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>225</real>
 		</dict>
 		<key>361EA732-1619-44FE-991A-3F0120D41C2F</key>
 		<dict>
 			<key>xpos</key>
 			<real>1180</real>
 			<key>ypos</key>
-			<real>410</real>
+			<real>460</real>
 		</dict>
 		<key>4DB440D5-3814-4C79-9724-D19FDDDA4BEC</key>
 		<dict>
 			<key>xpos</key>
 			<real>930</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>330</real>
 		</dict>
 		<key>61B83861-C1E7-4430-9D5B-399018364F26</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>625</real>
+			<real>675</real>
 		</dict>
 		<key>698A6D21-8A81-4110-9BF3-BF2FA07C5DC3</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>625</real>
+			<real>675</real>
 		</dict>
 		<key>6AAF51CA-1EE9-4CB8-B632-1B83BBD40B45</key>
 		<dict>
 			<key>xpos</key>
 			<real>310</real>
 			<key>ypos</key>
-			<real>760</real>
+			<real>810</real>
 		</dict>
 		<key>6EE7D872-0140-4B1B-B21A-D233250E9CC4</key>
 		<dict>
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>625</real>
+			<real>675</real>
 		</dict>
 		<key>7CE25BF5-0AF8-411E-8A05-244BF7CA878F</key>
 		<dict>
 			<key>xpos</key>
 			<real>1545</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>330</real>
 		</dict>
 		<key>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</key>
 		<dict>
 			<key>xpos</key>
 			<real>350</real>
 			<key>ypos</key>
-			<real>410</real>
+			<real>460</real>
 		</dict>
 		<key>A4782A1E-2A93-401B-9CB7-1D8770AD510E</key>
 		<dict>
 			<key>xpos</key>
 			<real>1180</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>330</real>
 		</dict>
 		<key>A6AD2F54-5A90-4F2A-8585-27AE685FD251</key>
 		<dict>
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>195</real>
 		</dict>
 		<key>B0805A79-AA30-432C-A7DD-18F900E79413</key>
 		<dict>
 			<key>xpos</key>
 			<real>1545</real>
 			<key>ypos</key>
-			<real>40</real>
+			<real>90</real>
 		</dict>
 		<key>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>195</real>
 		</dict>
 		<key>B34F5D4B-43D6-47E7-AC9E-0258BF80F186</key>
 		<dict>
 			<key>xpos</key>
 			<real>845</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>360</real>
 		</dict>
 		<key>BA834298-7386-4B4C-9E7D-E2D8542518B0</key>
 		<dict>
 			<key>xpos</key>
 			<real>1420</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>360</real>
 		</dict>
 		<key>BF340515-39CD-47C9-965D-B1631A3BF45F</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>410</real>
+			<real>460</real>
 		</dict>
 		<key>C05A6557-586B-4B86-AFFB-459590991D55</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>625</real>
+			<real>675</real>
 		</dict>
 		<key>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>195</real>
 		</dict>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
 		<dict>
 			<key>xpos</key>
 			<real>1405</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>215</real>
 		</dict>
 		<key>F4D88498-0A97-492F-989F-26182BFEEE31</key>
 		<dict>
 			<key>xpos</key>
 			<real>350</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>330</real>
 		</dict>
 		<key>F51DA51D-D1F1-4C2B-9FF9-D3B0B761C227</key>
 		<dict>
 			<key>xpos</key>
 			<real>505</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>350</real>
 		</dict>
 		<key>FA725E90-6083-4024-B085-AA1FBAD00591</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>330</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1554,6 +1554,8 @@ Query DALL·E via the `dalle` keyword.
 		<key>dalle_api_endpoint</key>
 		<string>https://api.openai.com</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>2024.5</string>
 	<key>webaddress</key>
