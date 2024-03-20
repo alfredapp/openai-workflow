@@ -1525,6 +1525,27 @@ Query DALL·E via the `dalle` keyword.
 			<key>variable</key>
 			<string>dalle_image_number</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>Optional OpenAI Organisation Identifier</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Get it at https://platform.openai.com/account/organization</string>
+			<key>label</key>
+			<string>Organisation ID</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>openai_org_id</string>
+		</dict>
 	</array>
 	<key>variables</key>
 	<dict>

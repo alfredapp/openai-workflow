@@ -58,7 +58,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
   }, "")
 }
 
-function startStream(apiEndpoint, apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
+function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
   $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create emtpy file
 
   const messages = systemPrompt ?
@@ -77,7 +77,7 @@ function startStream(apiEndpoint, apiKey, model, systemPrompt, ongoingChat, stre
     "--header", `Authorization: Bearer ${apiKey}`,
     "--data", JSON.stringify({ model: model, messages: messages, stream: true }),
     "--output", streamFile
-  ]
+  ].concat(apiOrgHeader)
 
   task.standardOutput = stdout
   task.launchAndReturnError(false)
@@ -196,6 +196,7 @@ function run(argv) {
   const typedQuery = argv[0]
   const maxEntries = 100
   const apiKey = envVar("openai_api_key")
+  const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpoint = envVar("chatgpt_api_endpoint")
   const systemPrompt = envVar("system_prompt")
   const model = envVar("gpt_model")
@@ -230,7 +231,7 @@ function run(argv) {
   const ongoingChat = previousChat.concat(appendQuery)
 
   // Make API request, write chat file, and start loop
-  startStream(apiEndpoint, apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
+  startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
   appendChat(chatFile, appendQuery)
 
   return JSON.stringify({

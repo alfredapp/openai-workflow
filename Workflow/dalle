@@ -75,6 +75,7 @@ function run(argv) {
   const typedQuery = argv[0]
   const maxEntries = 10
   const apiKey = envVar("openai_api_key")
+  const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpoint = envVar("dalle_api_endpoint")
   const model = envVar("dalle_model")
   const imageNumber = parseInt(envVar("dalle_image_number"))
@@ -126,7 +127,7 @@ function run(argv) {
       n: imageNumber,
       size: "1024x1024"
     })
-  ]
+  ].concat(apiOrgHeader)
 
   task.standardOutput = stdout
   task.launchAndReturnError(false)
