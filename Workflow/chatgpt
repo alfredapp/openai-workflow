@@ -197,12 +197,20 @@ function run(argv) {
   const maxEntries = 100
   const apiKey = envVar("openai_api_key")
   const apiEndpoint = envVar("chatgpt_api_endpoint")
+  const customModel = envVar("chatgpt_custom_model")
   const systemPrompt = envVar("system_prompt")
   const model = envVar("gpt_model")
   const pidStreamFile = `${envVar("alfred_workflow_cache")}/pid.txt`
   const chatFile = `${envVar("alfred_workflow_cache")}/chat.json`
   const streamFile = `${envVar("alfred_workflow_cache")}/stream.txt`
   const streamingNow = envVar("streaming_now") === "1"
+
+  // did advanced user pass a custom model name?
+  if (customModel == null || customModel.length === 0) {
+    useModel = model
+  } else {
+    useModel = customModel
+  }
 
   // If continually reading from a stream, continue that loop
   if (streamingNow) return readStream(streamFile, chatFile, pidStreamFile)
@@ -230,7 +238,7 @@ function run(argv) {
   const ongoingChat = previousChat.concat(appendQuery)
 
   // Make API request, write chat file, and start loop
-  startStream(apiEndpoint, apiKey, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
+  startStream(apiEndpoint, apiKey, useModel, systemPrompt, ongoingChat, streamFile, pidStreamFile)
   appendChat(chatFile, appendQuery)
 
   return JSON.stringify({
