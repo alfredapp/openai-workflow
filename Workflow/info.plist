@@ -662,6 +662,25 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7CE25BF5-0AF8-411E-8A05-244BF7CA878F</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>behaviour</key>
 				<integer>2</integer>
 				<key>fontmode</key>
@@ -691,25 +710,6 @@ function run() {
 			<string>4DB440D5-3814-4C79-9724-D19FDDDA4BEC</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>7CE25BF5-0AF8-411E-8A05-244BF7CA878F</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1586,9 +1586,13 @@ Query DALL·E via the `dalle` keyword.
 	<dict>
 		<key>chatgpt_api_endpoint</key>
 		<string>https://api.openai.com</string>
+		<key>chatgpt_model_override</key>
+		<string></string>
 		<key>dalle_api_endpoint</key>
 		<string>https://api.openai.com</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>2024.5</string>
 	<key>webaddress</key>

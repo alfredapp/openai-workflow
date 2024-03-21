@@ -199,7 +199,7 @@ function run(argv) {
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpoint = envVar("dalle_api_endpoint") || "https://api.openai.com"
   const systemPrompt = envVar("system_prompt")
-  const model = envVar("gpt_model")
+  const model = envVar("chatgpt_model_override") ? envVar("chatgpt_model_override") : envVar("gpt_model")
   const pidStreamFile = `${envVar("alfred_workflow_cache")}/pid.txt`
   const chatFile = `${envVar("alfred_workflow_cache")}/chat.json`
   const streamFile = `${envVar("alfred_workflow_cache")}/stream.txt`
