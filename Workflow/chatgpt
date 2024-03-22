@@ -59,7 +59,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
 }
 
 function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
-  $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create emtpy file
+  $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create empty file
 
   const messages = systemPrompt ?
     [{ role: "system", content: systemPrompt }].concat(ongoingChat) :
