@@ -19,6 +19,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>01A59F71-DA66-43E4-A948-1F2B653710DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C81D4557-D55C-4B23-8FB3-B28519D292A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>02627B69-31FA-4441-A186-B2095B6F40B9</key>
 		<array>
 			<dict>
@@ -50,6 +63,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2DFDEB25-8ABB-4A11-A363-0879F9878137</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD3EE72E-D542-4AEB-AED1-EA3C1F7BF6EC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -158,7 +184,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Reveal most recent image</string>
+				<string>Reveal last image</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -181,6 +207,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>61B83861-C1E7-4430-9D5B-399018364F26</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>98D8AB67-AA1E-452D-9E1D-3BE47B471BA7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0052DD7D-01DA-4E09-8B83-3F4994975B5F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -254,6 +293,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BD3EE72E-D542-4AEB-AED1-EA3C1F7BF6EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98D8AB67-AA1E-452D-9E1D-3BE47B471BA7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>BF340515-39CD-47C9-965D-B1631A3BF45F</key>
 		<array>
 			<dict>
@@ -281,11 +333,47 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>01A59F71-DA66-43E4-A948-1F2B653710DF</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Archive images</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>6EE7D872-0140-4B1B-B21A-D233250E9CC4</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string>Reveal most recent image</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C7C34D1A-42E0-4C94-B94D-C344D3EE63CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C05A6557-586B-4B86-AFFB-459590991D55</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C81D4557-D55C-4B23-8FB3-B28519D292A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2DFDEB25-8ABB-4A11-A363-0879F9878137</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -438,49 +526,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>readonly stream_file="${alfred_workflow_cache}/stream.txt"
-readonly pid_stream_file="${alfred_workflow_cache}/pid.txt"
-readonly pid_stream="$(&lt; "${pid_stream_file}")"
-
-kill "${pid_stream}"
-/bin/rm "${stream_file}" "${pid_stream_file}"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>11</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>02627B69-31FA-4441-A186-B2095B6F40B9</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>new_chat</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>A6AD2F54-5A90-4F2A-8585-27AE685FD251</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsfiles</key>
 				<false/>
 				<key>acceptsmulti</key>
@@ -523,6 +568,49 @@ kill "${pid_stream}"
 			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
 			<string>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>readonly stream_file="${alfred_workflow_cache}/stream.txt"
+readonly pid_stream_file="${alfred_workflow_cache}/pid.txt"
+readonly pid_stream="$(&lt; "${pid_stream_file}")"
+
+kill "${pid_stream}"
+/bin/rm "${stream_file}" "${pid_stream_file}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>02627B69-31FA-4441-A186-B2095B6F40B9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>new_chat</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>A6AD2F54-5A90-4F2A-8585-27AE685FD251</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -662,6 +750,39 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>target_path</key>
+					<string>{const:alfred_workflow_cache}/chat.json</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/path.exists</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>continue_chat</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>FA725E90-6083-4024-B085-AA1FBAD00591</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -714,39 +835,6 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>tasksettings</key>
-				<dict>
-					<key>target_path</key>
-					<string>{const:alfred_workflow_cache}/chat.json</string>
-				</dict>
-				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/files-and-folders/path.exists</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.task</string>
-			<key>uid</key>
-			<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>continue_chat</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>FA725E90-6083-4024-B085-AA1FBAD00591</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -773,19 +861,6 @@ function run() {
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>F51DA51D-D1F1-4C2B-9FF9-D3B0B761C227</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.transform</string>
-			<key>uid</key>
-			<string>BA834298-7386-4B4C-9E7D-E2D8542518B0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -829,19 +904,13 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>new_chat</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.utility.transform</string>
 			<key>uid</key>
-			<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+			<string>BA834298-7386-4B4C-9E7D-E2D8542518B0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -931,6 +1000,25 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>new_chat</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
@@ -966,23 +1054,126 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>{var:dalle_keyword}</string>
-				<key>skipuniversalaction</key>
-				<true/>
-				<key>subtext</key>
-				<string>Send image prompt to DALL·E</string>
-				<key>text</key>
-				<string>Generate with DALL·E</string>
-				<key>withspace</key>
-				<true/>
+				<key>tasksettings</key>
+				<dict>
+					<key>target_path</key>
+					<string>{var:dalle_images_folder}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/directory.children.sort</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.automation.task</string>
 			<key>uid</key>
-			<string>698A6D21-8A81-4110-9BF3-BF2FA07C5DC3</string>
+			<string>2DFDEB25-8ABB-4A11-A363-0879F9878137</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>save_in</key>
+					<string>{var:archive_dir}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/finder.move</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>98D8AB67-AA1E-452D-9E1D-3BE47B471BA7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>target_path</key>
+					<string>{var:archive_dir}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/directory.new</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>C81D4557-D55C-4B23-8FB3-B28519D292A0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>continue_images</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>0052DD7D-01DA-4E09-8B83-3F4994975B5F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>match_string</key>
+					<string>public.png</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/file.uti.matching</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>BD3EE72E-D542-4AEB-AED1-EA3C1F7BF6EC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>continue_images</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>C7C34D1A-42E0-4C94-B94D-C344D3EE63CE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>archive_dir</key>
+					<string>{var:dalle_images_folder}/Archive</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>01A59F71-DA66-43E4-A948-1F2B653710DF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -996,7 +1187,7 @@ function run() {
 				<key>fontsizing</key>
 				<integer>0</integer>
 				<key>footertext</key>
-				<string>↩ New prompt · ⌥↩ Reveal most recent image</string>
+				<string>↩ New prompt · ⌘↩ Archive images · ⌥↩ Reveal last image</string>
 				<key>inputfile</key>
 				<string>dalle</string>
 				<key>inputtype</key>
@@ -1022,6 +1213,19 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>61B83861-C1E7-4430-9D5B-399018364F26</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>tasksettings</key>
 				<dict>
 					<key>target_path</key>
@@ -1040,13 +1244,23 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string></string>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>{var:dalle_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Send image prompt to DALL·E</string>
+				<key>text</key>
+				<string>Generate with DALL·E</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>61B83861-C1E7-4430-9D5B-399018364F26</string>
+			<string>698A6D21-8A81-4110-9BF3-BF2FA07C5DC3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1092,15 +1306,30 @@ Query DALL·E via the `dalle` keyword.
 ![Querying DALL-E](images/about/dalletextview.png)
 
 * &lt;kbd&gt;↩&lt;/kbd&gt; Send a new prompt.
-* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Reveal the most recent image in the Finder.</string>
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Archive images.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Reveal last image in the Finder.</string>
 	<key>uidata</key>
 	<dict>
+		<key>0052DD7D-01DA-4E09-8B83-3F4994975B5F</key>
+		<dict>
+			<key>xpos</key>
+			<real>1385</real>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
 		<key>009F4B0B-7B7E-455F-9EA7-51334DBA92F1</key>
 		<dict>
 			<key>xpos</key>
 			<real>1075</real>
 			<key>ypos</key>
 			<real>225</real>
+		</dict>
+		<key>01A59F71-DA66-43E4-A948-1F2B653710DF</key>
+		<dict>
+			<key>xpos</key>
+			<real>525</real>
+			<key>ypos</key>
+			<real>710</real>
 		</dict>
 		<key>02627B69-31FA-4441-A186-B2095B6F40B9</key>
 		<dict>
@@ -1131,6 +1360,13 @@ Query DALL·E via the `dalle` keyword.
 			<real>1545</real>
 			<key>ypos</key>
 			<real>210</real>
+		</dict>
+		<key>2DFDEB25-8ABB-4A11-A363-0879F9878137</key>
+		<dict>
+			<key>xpos</key>
+			<real>865</real>
+			<key>ypos</key>
+			<real>680</real>
 		</dict>
 		<key>2EF95279-1807-40A5-B729-78040FF36DE3</key>
 		<dict>
@@ -1165,28 +1401,28 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>810</real>
 		</dict>
 		<key>698A6D21-8A81-4110-9BF3-BF2FA07C5DC3</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>810</real>
 		</dict>
 		<key>6AAF51CA-1EE9-4CB8-B632-1B83BBD40B45</key>
 		<dict>
 			<key>xpos</key>
 			<real>310</real>
 			<key>ypos</key>
-			<real>810</real>
+			<real>945</real>
 		</dict>
 		<key>6EE7D872-0140-4B1B-B21A-D233250E9CC4</key>
 		<dict>
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>810</real>
 		</dict>
 		<key>7CE25BF5-0AF8-411E-8A05-244BF7CA878F</key>
 		<dict>
@@ -1201,6 +1437,13 @@ Query DALL·E via the `dalle` keyword.
 			<real>350</real>
 			<key>ypos</key>
 			<real>460</real>
+		</dict>
+		<key>98D8AB67-AA1E-452D-9E1D-3BE47B471BA7</key>
+		<dict>
+			<key>xpos</key>
+			<real>1210</real>
+			<key>ypos</key>
+			<real>680</real>
 		</dict>
 		<key>A4782A1E-2A93-401B-9CB7-1D8770AD510E</key>
 		<dict>
@@ -1244,6 +1487,13 @@ Query DALL·E via the `dalle` keyword.
 			<key>ypos</key>
 			<real>360</real>
 		</dict>
+		<key>BD3EE72E-D542-4AEB-AED1-EA3C1F7BF6EC</key>
+		<dict>
+			<key>xpos</key>
+			<real>1040</real>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
 		<key>BF340515-39CD-47C9-965D-B1631A3BF45F</key>
 		<dict>
 			<key>xpos</key>
@@ -1256,7 +1506,21 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>810</real>
+		</dict>
+		<key>C7C34D1A-42E0-4C94-B94D-C344D3EE63CE</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
+		<key>C81D4557-D55C-4B23-8FB3-B28519D292A0</key>
+		<dict>
+			<key>xpos</key>
+			<real>690</real>
+			<key>ypos</key>
+			<real>680</real>
 		</dict>
 		<key>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</key>
 		<dict>
@@ -1591,8 +1855,6 @@ Query DALL·E via the `dalle` keyword.
 		<key>dalle_api_endpoint</key>
 		<string>https://api.openai.com</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>2024.5</string>
 	<key>webaddress</key>
