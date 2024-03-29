@@ -10,6 +10,7 @@ OpenAI integrations
 2. On the [API keys page](https://platform.openai.com/api-keys), click `+ Create new secret key`.
 3. Name your new secret key and click `Create secret key`.
 4. Copy your secret key and add it to the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
+   - If you are using a custom base url, set the `chatgpt_api_endpoint`environment variable in the top right corner of the alfred workflow UI.![](Workflow/images/about/configureworkflow.png)
 
 **Hot tip:** Using earlier models (e.g. ChatGPT 3.5 and DALL·E 2) is the most cost-effective way to use these OpenAI tools and stretch your credit a long way!
 
