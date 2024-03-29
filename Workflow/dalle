@@ -75,6 +75,7 @@ function run(argv) {
   const typedQuery = argv[0]
   const maxEntries = 10
   const apiKey = envVar("openai_api_key")
+  const apiEndpoint = envVar("chatgpt_api_endpoint")
   const model = envVar("dalle_model")
   const imageNumber = parseInt(envVar("dalle_image_number"))
   const imageStyle = envVar("dalle_style")
@@ -113,7 +114,7 @@ function run(argv) {
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
-    "https://api.openai.com/v1/images/generations",
+    `${apiEndpoint}/v1/images/generations`,
     "--silent",
     "--header", "Content-Type: application/json",
     "--header", `Authorization: Bearer ${apiKey}`,
