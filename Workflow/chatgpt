@@ -200,8 +200,8 @@ function run(argv) {
   const apiEndpoint = envVar("chatgpt_api_endpoint") || "https://api.openai.com"
   const systemPrompt = envVar("system_prompt")
   const model = envVar("chatgpt_model_override") ? envVar("chatgpt_model_override") : envVar("gpt_model")
+  const chatFile = `${envVar("alfred_workflow_data")}/chat.json`
   const pidStreamFile = `${envVar("alfred_workflow_cache")}/pid.txt`
-  const chatFile = `${envVar("alfred_workflow_cache")}/chat.json`
   const streamFile = `${envVar("alfred_workflow_cache")}/stream.txt`
   const streamingNow = envVar("streaming_now") === "1"
 

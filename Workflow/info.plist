@@ -6,6 +6,19 @@
 	<string>com.alfredapp.vitor.openai</string>
 	<key>connections</key>
 	<dict>
+		<key>002874FF-3AE4-4E8F-A4F8-65844E5D6CFB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74890339-2177-4514-B0CD-9D06DF626D21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>009F4B0B-7B7E-455F-9EA7-51334DBA92F1</key>
 		<array>
 			<dict>
@@ -62,7 +75,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
+				<string>C95DD27B-A564-4CB6-88F3-EBC83E6E5988</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -88,7 +101,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+				<string>69E7709B-6303-4AE7-8DC3-DE711A831767</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -189,6 +202,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>69E7709B-6303-4AE7-8DC3-DE711A831767</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>6AAF51CA-1EE9-4CB8-B632-1B83BBD40B45</key>
 		<array>
 			<dict>
@@ -207,6 +233,44 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>61B83861-C1E7-4430-9D5B-399018364F26</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>74890339-2177-4514-B0CD-9D06DF626D21</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F87E8DE0-4373-4E35-B112-2E68DC5B10E8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B69CE4C9-724F-4F79-B6B6-CE21E7B41056</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>879C841D-04CC-40AA-800D-689027CF0FB4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>69E7709B-6303-4AE7-8DC3-DE711A831767</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -245,7 +309,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</string>
+				<string>002874FF-3AE4-4E8F-A4F8-65844E5D6CFB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -254,11 +318,37 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</key>
+		<key>A9ABC5CB-D8E3-4E0D-9006-7B7F70A37D50</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>B34F5D4B-43D6-47E7-AC9E-0258BF80F186</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B2F04B2C-63AD-4A6D-9A81-7F333D0A075A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>879C841D-04CC-40AA-800D-689027CF0FB4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEF31BF9-C0C4-47F4-9ECA-3D50C2A84EE7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -306,6 +396,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BEF31BF9-C0C4-47F4-9ECA-3D50C2A84EE7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5D42111-A4E5-4C7E-AED9-B0A379A66986</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>BF340515-39CD-47C9-965D-B1631A3BF45F</key>
 		<array>
 			<dict>
@@ -325,6 +428,16 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Start new chat</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2F04B2C-63AD-4A6D-9A81-7F333D0A075A</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Browse chat histories</string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>
@@ -378,6 +491,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C95DD27B-A564-4CB6-88F3-EBC83E6E5988</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</key>
 		<array>
 			<dict>
@@ -422,6 +548,19 @@
 				<string>Start new chat</string>
 				<key>vitoclose</key>
 				<true/>
+			</dict>
+		</array>
+		<key>E5D42111-A4E5-4C7E-AED9-B0A379A66986</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A9ABC5CB-D8E3-4E0D-9006-7B7F70A37D50</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
@@ -478,7 +617,20 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>B34F5D4B-43D6-47E7-AC9E-0258BF80F186</string>
+				<string>BEF31BF9-C0C4-47F4-9ECA-3D50C2A84EE7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F87E8DE0-4373-4E35-B112-2E68DC5B10E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEF31BF9-C0C4-47F4-9ECA-3D50C2A84EE7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -532,7 +684,7 @@
 				<key>externaltriggerid</key>
 				<string>new_chat</string>
 				<key>passinputasargument</key>
-				<false/>
+				<true/>
 				<key>passvariables</key>
 				<true/>
 				<key>workflowbundleid</key>
@@ -548,29 +700,73 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>adduuid</key>
+				<key>concurrently</key>
 				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<true/>
-				<key>filename</key>
-				<string>{const:alfred_workflow_cache}/chat.json</string>
-				<key>filetext</key>
-				<string>[]</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>// Helpers
+function envVar(varName) {
+  return $.NSProcessInfo
+    .processInfo
+    .environment
+    .objectForKey(varName).js
+}
+
+function makeDir(path) {
+  $.NSFileManager.defaultManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(
+    path, true, undefined, undefined)
+}
+
+function writeFile(path, text) {
+  $(text).writeToFileAtomicallyEncodingError(path, true, $.NSUTF8StringEncoding, undefined)
+}
+
+function mv(initPath, targetPath) {
+  $.NSFileManager.defaultManager.moveItemAtPathToPathError(initPath, targetPath, undefined)
+}
+
+function padDate(number) {
+  return number.toString().padStart(2, "0")
+}
+
+// Constants for archive file name
+const uid = $.NSProcessInfo.processInfo.globallyUniqueString.js.split("-")[0]
+const currentDate = new Date()
+const currentYear = currentDate.getFullYear()
+const currentMonth = padDate(currentDate.getMonth() + 1) // Months are zero-based
+const currentDay = padDate(currentDate.getDate())
+const currentHour = padDate(currentDate.getHours())
+const currentMinute = padDate(currentDate.getMinutes())
+const currentSecond = padDate(currentDate.getSeconds())
+
+// Main
+const currentChat = `${envVar("alfred_workflow_data")}/chat.json`
+const replacementChat = envVar("replace_with_chat")
+const archiveDir = `${envVar("alfred_workflow_data")}/archive`
+const archivedChat = `${archiveDir}/${currentYear}.${currentMonth}.${currentDay}.${currentHour}.${currentMinute}.${currentSecond}-${uid}.json`
+
+makeDir(archiveDir)
+mv(currentChat, archivedChat)
+
+if (replacementChat) {
+  mv(replacementChat, currentChat)
+} else {
+  writeFile(currentChat, "[]")
+}</string>
+				<key>scriptargtype</key>
 				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</string>
+			<string>F87E8DE0-4373-4E35-B112-2E68DC5B10E8</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -582,6 +778,21 @@
 			<string>alfred.workflow.trigger.fallback</string>
 			<key>uid</key>
 			<string>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>new_chat</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>A6AD2F54-5A90-4F2A-8585-27AE685FD251</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -616,15 +827,32 @@ kill "${pid_stream}"
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:chatgpt_history_save}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Save History</string>
+						<key>uid</key>
+						<string>B69CE4C9-724F-4F79-B6B6-CE21E7B41056</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Ignore History</string>
+				<key>hideelse</key>
 				<false/>
-				<key>triggerid</key>
-				<string>new_chat</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>A6AD2F54-5A90-4F2A-8585-27AE685FD251</string>
+			<string>74890339-2177-4514-B0CD-9D06DF626D21</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -685,7 +913,27 @@ kill "${pid_stream}"
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
-				<true/>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>init_question</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>002874FF-3AE4-4E8F-A4F8-65844E5D6CFB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:init_question}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>streaming_now</key>
@@ -711,13 +959,106 @@ kill "${pid_stream}"
 					<key>init_question</key>
 					<string>{query}</string>
 					<key>new_chat</key>
-					<string>true</string>
+					<string>1</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>009F4B0B-7B7E-455F-9EA7-51334DBA92F1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<true/>
+				<key>filename</key>
+				<string>{const:alfred_workflow_data}/chat.json</string>
+				<key>filetext</key>
+				<string>[]</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
+				<false/>
+				<key>name</key>
+				<string>Ask ChatGPT</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>if [[ -f "${alfred_workflow_cache}/chat.json" ]]
+then
+  /bin/mkdir -p "${alfred_workflow_data}"
+  /bin/mv "${alfred_workflow_cache}/chat.json" "${alfred_workflow_data}/chat.json"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C95DD27B-A564-4CB6-88F3-EBC83E6E5988</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>target_path</key>
+					<string>{const:alfred_workflow_data}/chat.json</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/path.exists</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -764,39 +1105,15 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsfiles</key>
-				<false/>
-				<key>acceptsmulti</key>
-				<integer>0</integer>
-				<key>acceptstext</key>
-				<true/>
-				<key>acceptsurls</key>
-				<false/>
-				<key>name</key>
-				<string>Ask ChatGPT</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.universalaction</string>
-			<key>uid</key>
-			<string>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>tasksettings</key>
-				<dict>
-					<key>target_path</key>
-					<string>{const:alfred_workflow_cache}/chat.json</string>
-				</dict>
+				<dict/>
 				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/files-and-folders/path.exists</string>
+				<string>com.alfredapp.automation.core/files-and-folders/directory.new</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.automation.task</string>
 			<key>uid</key>
-			<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
+			<string>A9ABC5CB-D8E3-4E0D-9006-7B7F70A37D50</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -888,23 +1205,6 @@ function run() {
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>{var:init_question}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>B34F5D4B-43D6-47E7-AC9E-0258BF80F186</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
 				<false/>
@@ -924,6 +1224,45 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>{var:init_question}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>B34F5D4B-43D6-47E7-AC9E-0258BF80F186</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>
+</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>1</integer>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>split</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>E5D42111-A4E5-4C7E-AED9-B0A379A66986</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -933,6 +1272,93 @@ function run() {
 			<string>BA834298-7386-4B4C-9E7D-E2D8542518B0</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{const:alfred_workflow_data}
+{const:alfred_workflow_cache}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>BEF31BF9-C0C4-47F4-9ECA-3D50C2A84EE7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>{var:chatgpt_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>↩ Continue chat · ⌘↩ New chat · ⌥↩ Chat history</string>
+				<key>text</key>
+				<string>Ask ChatGPT</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BF340515-39CD-47C9-965D-B1631A3BF45F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>new_chat</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>if [[ -f "${alfred_workflow_cache}/chat.json" ]]
+then
+  /bin/mkdir -p "${alfred_workflow_data}"
+  /bin/mv "${alfred_workflow_cache}/chat.json" "${alfred_workflow_data}/chat.json"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>69E7709B-6303-4AE7-8DC3-DE711A831767</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -997,48 +1423,6 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>{var:chatgpt_keyword}</string>
-				<key>skipuniversalaction</key>
-				<true/>
-				<key>subtext</key>
-				<string>↩ Continue chat · ⌘↩ New chat</string>
-				<key>text</key>
-				<string>Ask ChatGPT</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>BF340515-39CD-47C9-965D-B1631A3BF45F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>new_chat</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
@@ -1068,6 +1452,135 @@ function run() {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>2EF95279-1807-40A5-B729-78040FF36DE3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading Histories…</string>
+				<key>script</key>
+				<string>function envVar(varName) {
+  return $.NSProcessInfo
+    .processInfo
+    .environment
+    .objectForKey(varName).js
+}
+
+function dirContents(path) {
+  return $.NSFileManager.defaultManager.contentsOfDirectoryAtURLIncludingPropertiesForKeysOptionsError(
+    $.NSURL.fileURLWithPath(path), undefined, $.NSDirectoryEnumerationSkipsHiddenFiles, undefined)
+    .js.map(p =&gt; p.path.js).sort()
+}
+
+function readChat(path) {
+  const chatString = $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, undefined).js
+  return JSON.parse(chatString)
+}
+
+function trashChat(path) {
+  const fileURL = $.NSURL.fileURLWithPath(path)
+  $.NSFileManager.defaultManager.trashItemAtURLResultingItemURLError(fileURL, undefined, undefined)
+}
+
+function noArchives() {
+  return JSON.stringify({ items: [{
+    title: "No Chat History Found",
+    subtitle: "Archives are created when starting new conversations",
+    valid: false
+  }]})
+}
+
+function run() {
+  const archiveDir = `${envVar("alfred_workflow_data")}/archive`
+  if (!$.NSFileManager.defaultManager.fileExistsAtPath(archiveDir)) return noArchives()
+
+  const sfItems = dirContents(archiveDir)
+    .filter(file =&gt; file.endsWith(".json"))
+    .toReversed()
+    .flatMap(file =&gt; {
+      const chatContents = readChat(file)
+      const firstQuestion = chatContents.find(item =&gt; item["role"] === "user")?.["content"]
+      const lastQuestion = chatContents.toReversed().find(item =&gt; item["role"] === "user")?.["content"]
+
+      // Delete invalid chats
+      if (!firstQuestion) trashChat(file)
+
+      return {
+        type: "file",
+        title: firstQuestion,
+        subtitle: lastQuestion,
+        match: `${firstQuestion} ${lastQuestion}`,
+        arg: file
+      }
+    })
+
+  if (sfItems.length === 0) return noArchives()
+
+  return JSON.stringify({ items: sfItems })
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>ChatGPT Chat History</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B2F04B2C-63AD-4A6D-9A81-7F333D0A075A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>chatgpt_history_save</key>
+					<string>1</string>
+					<key>replace_with_chat</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>879C841D-04CC-40AA-800D-689027CF0FB4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1305,7 +1818,9 @@ function run() {
 
 ## Usage
 
-Query ChatGPT via the `chatgpt` keyword.
+### ChatGPT
+
+Query ChatGPT via the `chatgpt` keyword, the [Universal Action](https://www.alfredapp.com/help/features/universal-actions/), or the [Fallback Search](https://www.alfredapp.com/help/features/default-results/fallback-searches/).
 
 ![Start ChatGPT query](images/about/chatgptkeyword.png)
 
@@ -1317,7 +1832,15 @@ Query ChatGPT via the `chatgpt` keyword.
 * &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy full chat.
 * &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Stop generating answer.
 
-A [Fallback Search](https://www.alfredapp.com/help/features/default-results/fallback-searches/) is included.
+#### Chat History
+
+View Chat History with ⌥↩ in the `chatgpt` keyword. Each result shows the first question as the title and the last as the subtitle.
+
+![Viewing chat histories](images/about/chatgpthistory.png)
+
+&lt;kbd&gt;↩&lt;/kbd&gt; to archive the current chat and load the selected one. Older chats can be trashed with the `Delete` [Universal Action](https://www.alfredapp.com/help/features/universal-actions/). Select multiple chats with the [File Buffer](https://www.alfredapp.com/help/features/file-search/#file-buffer).
+
+### DALL·E
 
 Query DALL·E via the `dalle` keyword.
 
@@ -1330,189 +1853,240 @@ Query DALL·E via the `dalle` keyword.
 * &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Reveal last image in the Finder.</string>
 	<key>uidata</key>
 	<dict>
+		<key>002874FF-3AE4-4E8F-A4F8-65844E5D6CFB</key>
+		<dict>
+			<key>xpos</key>
+			<real>915</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
 		<key>0052DD7D-01DA-4E09-8B83-3F4994975B5F</key>
 		<dict>
 			<key>xpos</key>
 			<real>1385</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>900</real>
 		</dict>
 		<key>009F4B0B-7B7E-455F-9EA7-51334DBA92F1</key>
 		<dict>
 			<key>xpos</key>
-			<real>1075</real>
+			<real>1890</real>
 			<key>ypos</key>
-			<real>225</real>
+			<real>335</real>
 		</dict>
 		<key>01A59F71-DA66-43E4-A948-1F2B653710DF</key>
 		<dict>
 			<key>xpos</key>
 			<real>525</real>
 			<key>ypos</key>
-			<real>705</real>
+			<real>930</real>
 		</dict>
 		<key>02627B69-31FA-4441-A186-B2095B6F40B9</key>
 		<dict>
 			<key>note</key>
 			<string>Stop stream process</string>
 			<key>xpos</key>
-			<real>1180</real>
+			<real>1995</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>305</real>
 		</dict>
 		<key>055D6B34-9A00-49B7-A135-3686D0911EEA</key>
 		<dict>
 			<key>xpos</key>
-			<real>690</real>
+			<real>1490</real>
 			<key>ypos</key>
-			<real>460</real>
+			<real>570</real>
 		</dict>
 		<key>19467065-1FA8-4C92-9F58-797A122BE296</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>360</real>
+			<real>465</real>
 		</dict>
 		<key>2345B220-18B0-4F70-9DD7-B7A20763FFBC</key>
 		<dict>
 			<key>xpos</key>
-			<real>1545</real>
+			<real>2360</real>
 			<key>ypos</key>
-			<real>210</real>
+			<real>320</real>
 		</dict>
 		<key>2DFDEB25-8ABB-4A11-A363-0879F9878137</key>
 		<dict>
 			<key>xpos</key>
 			<real>865</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>900</real>
 		</dict>
 		<key>2EF95279-1807-40A5-B729-78040FF36DE3</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>490</real>
+			<real>595</real>
 		</dict>
 		<key>2F3B5565-0BBD-4DC6-962B-BEF7277AC599</key>
 		<dict>
 			<key>xpos</key>
-			<real>1330</real>
+			<real>2145</real>
 			<key>ypos</key>
-			<real>225</real>
+			<real>335</real>
 		</dict>
 		<key>361EA732-1619-44FE-991A-3F0120D41C2F</key>
 		<dict>
 			<key>xpos</key>
-			<real>1180</real>
+			<real>1995</real>
 			<key>ypos</key>
-			<real>460</real>
+			<real>570</real>
 		</dict>
 		<key>4DB440D5-3814-4C79-9724-D19FDDDA4BEC</key>
 		<dict>
 			<key>xpos</key>
-			<real>930</real>
+			<real>1745</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>440</real>
 		</dict>
 		<key>61B83861-C1E7-4430-9D5B-399018364F26</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>1030</real>
 		</dict>
 		<key>698A6D21-8A81-4110-9BF3-BF2FA07C5DC3</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>1030</real>
+		</dict>
+		<key>69E7709B-6303-4AE7-8DC3-DE711A831767</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>455</real>
+			<key>ypos</key>
+			<real>565</real>
 		</dict>
 		<key>6AAF51CA-1EE9-4CB8-B632-1B83BBD40B45</key>
 		<dict>
 			<key>xpos</key>
 			<real>310</real>
 			<key>ypos</key>
-			<real>945</real>
+			<real>1170</real>
 		</dict>
 		<key>6EE7D872-0140-4B1B-B21A-D233250E9CC4</key>
 		<dict>
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>1030</real>
+		</dict>
+		<key>74890339-2177-4514-B0CD-9D06DF626D21</key>
+		<dict>
+			<key>xpos</key>
+			<real>980</real>
+			<key>ypos</key>
+			<real>320</real>
 		</dict>
 		<key>7CE25BF5-0AF8-411E-8A05-244BF7CA878F</key>
 		<dict>
 			<key>xpos</key>
-			<real>1545</real>
+			<real>2360</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>440</real>
 		</dict>
 		<key>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</key>
 		<dict>
 			<key>xpos</key>
-			<real>350</real>
+			<real>630</real>
 			<key>ypos</key>
-			<real>460</real>
+			<real>565</real>
+		</dict>
+		<key>879C841D-04CC-40AA-800D-689027CF0FB4</key>
+		<dict>
+			<key>xpos</key>
+			<real>400</real>
+			<key>ypos</key>
+			<real>755</real>
 		</dict>
 		<key>98D8AB67-AA1E-452D-9E1D-3BE47B471BA7</key>
 		<dict>
 			<key>xpos</key>
 			<real>1210</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>900</real>
 		</dict>
 		<key>A4782A1E-2A93-401B-9CB7-1D8770AD510E</key>
 		<dict>
 			<key>xpos</key>
-			<real>1180</real>
+			<real>1995</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>440</real>
 		</dict>
 		<key>A6AD2F54-5A90-4F2A-8585-27AE685FD251</key>
 		<dict>
 			<key>xpos</key>
-			<real>485</real>
+			<real>765</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>300</real>
+		</dict>
+		<key>A9ABC5CB-D8E3-4E0D-9006-7B7F70A37D50</key>
+		<dict>
+			<key>xpos</key>
+			<real>1490</real>
+			<key>ypos</key>
+			<real>440</real>
 		</dict>
 		<key>B0805A79-AA30-432C-A7DD-18F900E79413</key>
 		<dict>
 			<key>xpos</key>
-			<real>1545</real>
+			<real>2360</real>
 			<key>ypos</key>
-			<real>90</real>
+			<real>200</real>
+		</dict>
+		<key>B2F04B2C-63AD-4A6D-9A81-7F333D0A075A</key>
+		<dict>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>725</real>
 		</dict>
 		<key>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</key>
 		<dict>
 			<key>xpos</key>
-			<real>690</real>
+			<real>1130</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>340</real>
 		</dict>
 		<key>B34F5D4B-43D6-47E7-AC9E-0258BF80F186</key>
 		<dict>
 			<key>xpos</key>
-			<real>845</real>
+			<real>1660</real>
 			<key>ypos</key>
-			<real>360</real>
+			<real>470</real>
 		</dict>
 		<key>BA834298-7386-4B4C-9E7D-E2D8542518B0</key>
 		<dict>
 			<key>xpos</key>
-			<real>1420</real>
+			<real>2235</real>
 			<key>ypos</key>
-			<real>360</real>
+			<real>470</real>
 		</dict>
 		<key>BD3EE72E-D542-4AEB-AED1-EA3C1F7BF6EC</key>
 		<dict>
 			<key>xpos</key>
 			<real>1040</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>900</real>
+		</dict>
+		<key>BEF31BF9-C0C4-47F4-9ECA-3D50C2A84EE7</key>
+		<dict>
+			<key>xpos</key>
+			<real>1360</real>
+			<key>ypos</key>
+			<real>470</real>
 		</dict>
 		<key>BF340515-39CD-47C9-965D-B1631A3BF45F</key>
 		<dict>
@@ -1521,28 +2095,37 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>460</real>
+			<real>565</real>
 		</dict>
 		<key>C05A6557-586B-4B86-AFFB-459590991D55</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>1030</real>
 		</dict>
 		<key>C7C34D1A-42E0-4C94-B94D-C344D3EE63CE</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>900</real>
 		</dict>
 		<key>C81D4557-D55C-4B23-8FB3-B28519D292A0</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>675</real>
+			<real>900</real>
+		</dict>
+		<key>C95DD27B-A564-4CB6-88F3-EBC83E6E5988</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>460</real>
+			<key>ypos</key>
+			<real>435</real>
 		</dict>
 		<key>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</key>
 		<dict>
@@ -1551,7 +2134,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>435</real>
 		</dict>
 		<key>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</key>
 		<dict>
@@ -1560,35 +2143,49 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>300</real>
+		</dict>
+		<key>E5D42111-A4E5-4C7E-AED9-B0A379A66986</key>
+		<dict>
+			<key>xpos</key>
+			<real>1425</real>
+			<key>ypos</key>
+			<real>470</real>
 		</dict>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
 		<dict>
 			<key>xpos</key>
-			<real>1405</real>
+			<real>2220</real>
 			<key>ypos</key>
-			<real>215</real>
+			<real>325</real>
 		</dict>
 		<key>F4D88498-0A97-492F-989F-26182BFEEE31</key>
 		<dict>
 			<key>xpos</key>
-			<real>350</real>
+			<real>630</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>435</real>
 		</dict>
 		<key>F51DA51D-D1F1-4C2B-9FF9-D3B0B761C227</key>
 		<dict>
 			<key>xpos</key>
-			<real>505</real>
+			<real>785</real>
 			<key>ypos</key>
-			<real>350</real>
+			<real>455</real>
+		</dict>
+		<key>F87E8DE0-4373-4E35-B112-2E68DC5B10E8</key>
+		<dict>
+			<key>xpos</key>
+			<real>1130</real>
+			<key>ypos</key>
+			<real>215</real>
 		</dict>
 		<key>FA725E90-6083-4024-B085-AA1FBAD00591</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>165</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1634,6 +2231,25 @@ Query DALL·E via the `dalle` keyword.
 			<string>textfield</string>
 			<key>variable</key>
 			<string>chatgpt_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Save current chat when starting a new one</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keep History</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>chatgpt_history_save</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1881,6 +2497,8 @@ Query DALL·E via the `dalle` keyword.
 		<key>dalle_api_endpoint</key>
 		<string>https://api.openai.com</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>2024.5</string>
 	<key>webaddress</key>
