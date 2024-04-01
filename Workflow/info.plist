@@ -141,7 +141,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Clear and restart chat</string>
+				<string>Start new chat</string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>
@@ -324,7 +324,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Ask and force start a new conversation</string>
+				<string>Start new chat</string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>
@@ -390,6 +390,16 @@
 				<key>vitoclose</key>
 				<true/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EF95279-1807-40A5-B729-78040FF36DE3</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Start new chat</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
 		</array>
 		<key>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</key>
 		<array>
@@ -401,7 +411,17 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EF95279-1807-40A5-B729-78040FF36DE3</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Start new chat</string>
+				<key>vitoclose</key>
+				<true/>
 			</dict>
 		</array>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
@@ -494,13 +514,15 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>text</key>
-				<string>Ask ChatGPT '{query}'</string>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>continue_chat</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.fallback</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</string>
+			<string>FA725E90-6083-4024-B085-AA1FBAD00591</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -520,27 +542,6 @@
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>B0805A79-AA30-432C-A7DD-18F900E79413</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsfiles</key>
-				<false/>
-				<key>acceptsmulti</key>
-				<integer>0</integer>
-				<key>acceptstext</key>
-				<true/>
-				<key>acceptsurls</key>
-				<false/>
-				<key>name</key>
-				<string>Ask ChatGPT</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.universalaction</string>
-			<key>uid</key>
-			<string>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -568,6 +569,19 @@
 			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
 			<string>B31B4473-3184-4D6C-B4D9-78FC5DCC7D00</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>text</key>
+				<string>Ask ChatGPT '{query}'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.fallback</string>
+			<key>uid</key>
+			<string>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -750,6 +764,27 @@ function run() {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
+				<false/>
+				<key>name</key>
+				<string>Ask ChatGPT</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>tasksettings</key>
 				<dict>
 					<key>target_path</key>
@@ -762,21 +797,6 @@ function run() {
 			<string>alfred.workflow.automation.task</string>
 			<key>uid</key>
 			<string>F4D88498-0A97-492F-989F-26182BFEEE31</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>continue_chat</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>FA725E90-6083-4024-B085-AA1FBAD00591</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -809,7 +829,7 @@ function run() {
 				<key>fontsizing</key>
 				<integer>0</integer>
 				<key>footertext</key>
-				<string>↩ New question · ⌘↩ Restart chat · ⌥↩ Copy last · ⌃↩ Copy all · ⇧↩ Interrupt</string>
+				<string>↩ Ask question · ⌘↩ New chat · ⌥↩ Copy last · ⌃↩ Copy all · ⇧↩ Interrupt</string>
 				<key>inputfile</key>
 				<string>chatgpt</string>
 				<key>inputtype</key>
@@ -984,7 +1004,7 @@ function run() {
 				<key>skipuniversalaction</key>
 				<true/>
 				<key>subtext</key>
-				<string>↩ Continue chat · ⌘↩ Force start a new chat</string>
+				<string>↩ Continue chat · ⌘↩ New chat</string>
 				<key>text</key>
 				<string>Ask ChatGPT</string>
 				<key>withspace</key>
@@ -1281,7 +1301,7 @@ function run() {
 3. Name your new secret key and click `Create secret key`.
 4. Copy your secret key and add it to the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 
-**Hot tip:** Using earlier models (e.g. ChatGPT 3.5 and DALL·E 2) is the most cost-effective way to use these OpenAI tools and stretch your credit a long way!
+**Hot tip:** Using earlier models (e.g. ChatGPT 3.5 Turbo and DALL·E 2) is the most cost-effective way to use these OpenAI tools and stretch your credit a long way!
 
 ## Usage
 
@@ -1292,7 +1312,7 @@ Query ChatGPT via the `chatgpt` keyword.
 ![Querying ChatGPT](images/about/chatgpttextview.png)
 
 * &lt;kbd&gt;↩&lt;/kbd&gt; Ask a new question.
-* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Clear and restart chat.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Clear and start new chat.
 * &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy last answer.
 * &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy full chat.
 * &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Stop generating answer.
@@ -1315,7 +1335,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>1385</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>675</real>
 		</dict>
 		<key>009F4B0B-7B7E-455F-9EA7-51334DBA92F1</key>
 		<dict>
@@ -1329,7 +1349,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>525</real>
 			<key>ypos</key>
-			<real>710</real>
+			<real>705</real>
 		</dict>
 		<key>02627B69-31FA-4441-A186-B2095B6F40B9</key>
 		<dict>
@@ -1366,7 +1386,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>865</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>675</real>
 		</dict>
 		<key>2EF95279-1807-40A5-B729-78040FF36DE3</key>
 		<dict>
@@ -1401,14 +1421,14 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>810</real>
+			<real>805</real>
 		</dict>
 		<key>698A6D21-8A81-4110-9BF3-BF2FA07C5DC3</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>810</real>
+			<real>805</real>
 		</dict>
 		<key>6AAF51CA-1EE9-4CB8-B632-1B83BBD40B45</key>
 		<dict>
@@ -1422,7 +1442,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>810</real>
+			<real>805</real>
 		</dict>
 		<key>7CE25BF5-0AF8-411E-8A05-244BF7CA878F</key>
 		<dict>
@@ -1443,7 +1463,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>1210</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>675</real>
 		</dict>
 		<key>A4782A1E-2A93-401B-9CB7-1D8770AD510E</key>
 		<dict>
@@ -1492,10 +1512,12 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>1040</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>675</real>
 		</dict>
 		<key>BF340515-39CD-47C9-965D-B1631A3BF45F</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
@@ -1506,35 +1528,39 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>810</real>
+			<real>805</real>
 		</dict>
 		<key>C7C34D1A-42E0-4C94-B94D-C344D3EE63CE</key>
 		<dict>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>675</real>
 		</dict>
 		<key>C81D4557-D55C-4B23-8FB3-B28519D292A0</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>675</real>
 		</dict>
 		<key>CBBF8BED-C42D-4793-8FEA-EA80FC94C493</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
 			<real>195</real>
-		</dict>
-		<key>DA9FB2AC-0A0A-463D-B07A-B25CD699C24C</key>
-		<dict>
-			<key>xpos</key>
-			<real>65</real>
-			<key>ypos</key>
-			<real>60</real>
 		</dict>
 		<key>E65D3BEB-6B77-4799-B6BA-A8DBDEFB7167</key>
 		<dict>
@@ -1562,7 +1588,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>xpos</key>
 			<real>65</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>60</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
