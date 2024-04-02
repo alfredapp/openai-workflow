@@ -1,6 +1,13 @@
 name: Bug Report
 description: File a bug report
 body:
+  - type: checkboxes
+    attributes:
+      label: "Frequently Asked Questions"
+      description: Please be sure to consult the FAQ, as most problems and advanced features are covered there.
+      options:
+        - label: I have [read the FAQ](https://www.alfredforum.com/topic/21483-chatgpt-dall-e-openai-integrations/#comment-111557) before opening the issue.
+          required: true
   - type: input
     attributes:
       label: Workflow version
