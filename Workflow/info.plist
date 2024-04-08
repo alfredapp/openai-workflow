@@ -1085,7 +1085,7 @@ function readChat(path) {
 
 // Main
 function run() {
-  const chatFile = `${envVar("alfred_workflow_cache")}/chat.json`
+  const chatFile = `${envVar("alfred_workflow_data")}/chat.json`
   return readChat(chatFile).findLast(message =&gt; message["role"] === "assistant")["content"]
 }</string>
 				<key>scriptargtype</key>
@@ -1403,7 +1403,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
 
 // Main
 function run() {
-  const chatFile = `${envVar("alfred_workflow_cache")}/chat.json`
+  const chatFile = `${envVar("alfred_workflow_data")}/chat.json`
   return markdownChat(readChat(chatFile), false)
 }</string>
 				<key>scriptargtype</key>
