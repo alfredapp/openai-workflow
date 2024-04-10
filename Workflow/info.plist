@@ -2267,8 +2267,8 @@ Query DALL·E via the `dalle` keyword.
 						<string>gpt-4</string>
 					</array>
 					<array>
-						<string>GPT-4 Turbo (preview)</string>
-						<string>gpt-4-turbo-preview</string>
+						<string>GPT-4 Turbo</string>
+						<string>gpt-4-turbo</string>
 					</array>
 				</array>
 			</dict>
@@ -2497,8 +2497,6 @@ Query DALL·E via the `dalle` keyword.
 		<key>dalle_api_endpoint</key>
 		<string>https://api.openai.com</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>2024.7</string>
 	<key>webaddress</key>
