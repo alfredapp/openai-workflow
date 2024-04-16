@@ -136,6 +136,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3CAF90D9-FBE8-4B90-9B91-8452E0B534EF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4DB440D5-3814-4C79-9724-D19FDDDA4BEC</key>
 		<array>
 			<dict>
@@ -206,7 +219,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>84A47CA0-9D2D-4F06-A7AD-71C5DEF87663</string>
+				<string>3CAF90D9-FBE8-4B90-9B91-8452E0B534EF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -686,7 +699,7 @@
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
-				<true/>
+				<false/>
 				<key>workflowbundleid</key>
 				<string>self</string>
 			</dict>
@@ -1320,9 +1333,9 @@ function run() {
 				<key>externaltriggerid</key>
 				<string>new_chat</string>
 				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
 				<true/>
+				<key>passvariables</key>
+				<false/>
 				<key>workflowbundleid</key>
 				<string>self</string>
 			</dict>
@@ -1452,6 +1465,23 @@ function run() {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>2EF95279-1807-40A5-B729-78040FF36DE3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:init_question}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3CAF90D9-FBE8-4B90-9B91-8452E0B534EF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1920,6 +1950,8 @@ Query DALL·E via the `dalle` keyword.
 		</dict>
 		<key>2EF95279-1807-40A5-B729-78040FF36DE3</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
@@ -1938,6 +1970,15 @@ Query DALL·E via the `dalle` keyword.
 			<real>1995</real>
 			<key>ypos</key>
 			<real>460</real>
+		</dict>
+		<key>3CAF90D9-FBE8-4B90-9B91-8452E0B534EF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>560</real>
+			<key>ypos</key>
+			<real>485</real>
 		</dict>
 		<key>4DB440D5-3814-4C79-9724-D19FDDDA4BEC</key>
 		<dict>
@@ -1965,7 +2006,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>455</real>
+			<real>405</real>
 			<key>ypos</key>
 			<real>455</real>
 		</dict>
@@ -2123,7 +2164,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>460</real>
+			<real>410</real>
 			<key>ypos</key>
 			<real>325</real>
 		</dict>
