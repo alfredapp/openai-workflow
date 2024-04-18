@@ -1335,7 +1335,7 @@ function run() {
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
-				<false/>
+				<true/>
 				<key>workflowbundleid</key>
 				<string>self</string>
 			</dict>
@@ -1536,7 +1536,7 @@ function trashChat(path) {
 
 function noArchives() {
   return JSON.stringify({ items: [{
-    title: "No Chat History Found",
+    title: "No Chat Histories Found",
     subtitle: "Archives are created when starting new conversations",
     valid: false
   }]})
