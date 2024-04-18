@@ -58,12 +58,12 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
   }, "")
 }
 
-function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, ongoingChat, streamFile, pidStreamFile) {
+function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile) {
   $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create empty file
 
   const messages = systemPrompt ?
-    [{ role: "system", content: systemPrompt }].concat(ongoingChat) :
-    ongoingChat
+    [{ role: "system", content: systemPrompt }].concat(contextChat) :
+    contextChat
 
   const task = $.NSTask.alloc.init
   const stdout = $.NSPipe.pipe
@@ -194,7 +194,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
 function run(argv) {
   // Constant data
   const typedQuery = argv[0]
-  const maxEntries = 100
+  const maxContext = parseInt(envVar("max_context"))
   const apiKey = envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpoint = envVar("chatgpt_api_endpoint") || "https://api.openai.com"
@@ -208,8 +208,8 @@ function run(argv) {
   // If continually reading from a stream, continue that loop
   if (streamingNow) return readStream(streamFile, chatFile, pidStreamFile)
 
-  // Load previous conversation and cap to maximum size
-  const previousChat = readChat(chatFile).slice(-maxEntries)
+  // Load previous conversation
+  const previousChat = readChat(chatFile)
 
   // If "streaming_now" is unset but stream file exists, the window was closed mid-stream
   // Reload conversation and rerun to resume stream
@@ -229,9 +229,10 @@ function run(argv) {
   // Append new question to chat
   const appendQuery = { role: "user", content: typedQuery }
   const ongoingChat = previousChat.concat(appendQuery)
+  const contextChat = ongoingChat.slice(-maxContext)
 
   // Make API request, write chat file, and start loop
-  startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, ongoingChat, streamFile, pidStreamFile)
+  startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile)
   appendChat(chatFile, appendQuery)
 
   return JSON.stringify({
