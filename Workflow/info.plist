@@ -2311,6 +2311,10 @@ Query DALL·E via the `dalle` keyword.
 						<string>GPT-4 Turbo</string>
 						<string>gpt-4-turbo</string>
 					</array>
+					<array>
+						<string>GPT-4o</string>
+						<string>gpt-4o</string>
+					</array>
 				</array>
 			</dict>
 			<key>description</key>
