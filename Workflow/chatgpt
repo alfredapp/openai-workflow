@@ -127,9 +127,9 @@ function readStream(streamFile, chatFile, pidStreamFile) {
   // Parse streaming response
   const chunks = streamString
     .split("\n") // Split into lines
+    .filter(item => item) // Remove empty lines
     .map(item => item.replace(/^data: /, "")) // Remove extraneous "data: "
-    .filter(item => item.startsWith("{")) // Only grab lines which could be expected JSON
-    .map(item => JSON.parse(item)) // Parse as JSON
+    .flatMap(item => { try { return JSON.parse(item) } catch { return [] } }) // Parse as JSON
 
   const responseText = chunks.map(item => item["choices"][0]?.["delta"]["content"]).join("")
 
