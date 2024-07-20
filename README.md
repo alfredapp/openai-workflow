@@ -11,8 +11,6 @@ OpenAI integrations
 3. Name your new secret key and click `Create secret key`.
 4. Copy your secret key and add it to the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 
-**Hot tip:** Using earlier models (e.g. ChatGPT 3.5 Turbo and DALL·E 2) is the most cost-effective way to use these OpenAI tools and stretch your credit a long way!
-
 ## Usage
 
 ### ChatGPT
