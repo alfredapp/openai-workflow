@@ -1940,8 +1940,6 @@ function run() {
 3. Name your new secret key and click `Create secret key`.
 4. Copy your secret key and add it to the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 
-**Hot tip:** Using earlier models (e.g. ChatGPT 3.5 Turbo and DALL·E 2) is the most cost-effective way to use these OpenAI tools and stretch your credit a long way!
-
 ## Usage
 
 ### ChatGPT
@@ -2417,12 +2415,16 @@ Query DALL·E via the `dalle` keyword.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gpt-3.5-turbo</string>
+				<string>gpt-4o-mini</string>
 				<key>pairs</key>
 				<array>
 					<array>
-						<string>GPT-3.5 Turbo</string>
-						<string>gpt-3.5-turbo</string>
+						<string>GPT-4o mini</string>
+						<string>gpt-4o-mini</string>
+					</array>
+					<array>
+						<string>GPT-4o</string>
+						<string>gpt-4o</string>
 					</array>
 					<array>
 						<string>GPT-4</string>
@@ -2431,10 +2433,6 @@ Query DALL·E via the `dalle` keyword.
 					<array>
 						<string>GPT-4 Turbo</string>
 						<string>gpt-4-turbo</string>
-					</array>
-					<array>
-						<string>GPT-4o</string>
-						<string>gpt-4o</string>
 					</array>
 				</array>
 			</dict>
