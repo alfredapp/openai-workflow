@@ -58,7 +58,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
   }, "")
 }
 
-function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile) {
+function startStream(apiEndpoint, apiPath, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile) {
   $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create empty file
 
   const messages = systemPrompt ?
@@ -68,13 +68,16 @@ function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, con
   const task = $.NSTask.alloc.init
   const stdout = $.NSPipe.pipe
 
+  const url = `${apiEndpoint}${apiPath}`
+
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
-    `${apiEndpoint}/v1/chat/completions`,
+    `${url}`,
     "--speed-limit", "0", "--speed-time", "5", // Abort stalled connection after a few seconds
     "--silent", "--no-buffer",
     "--header", "Content-Type: application/json",
     "--header", `Authorization: Bearer ${apiKey}`,
+    "--header", `api-key: ${apiKey}`,
     "--data", JSON.stringify({ model: model, messages: messages, stream: true }),
     "--output", streamFile
   ].concat(apiOrgHeader)
@@ -198,6 +201,7 @@ function run(argv) {
   const apiKey = envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpoint = envVar("chatgpt_api_endpoint") || "https://api.openai.com"
+  const apiPath = envVar("chatgpt_api_path") || "/v1/chat/completions"
   const systemPrompt = envVar("system_prompt")
   const model = envVar("chatgpt_model_override") ? envVar("chatgpt_model_override") : envVar("gpt_model")
   const chatFile = `${envVar("alfred_workflow_data")}/chat.json`
@@ -232,7 +236,7 @@ function run(argv) {
   const contextChat = ongoingChat.slice(-maxContext)
 
   // Make API request, write chat file, and start loop
-  startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile)
+  startStream(apiEndpoint, apiPath, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile)
   appendChat(chatFile, appendQuery)
 
   return JSON.stringify({
