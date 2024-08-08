@@ -954,7 +954,7 @@ if (replacementChat) {
 				<key>variables</key>
 				<dict>
 					<key>new_chat</key>
-					<string>1</string>
+					<string>0</string>
 					<key>pre_init</key>
 					<string>{query}</string>
 				</dict>
