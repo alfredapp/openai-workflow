@@ -107,7 +107,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
         deleteFile(pidStreamFile)
 
         return JSON.stringify({
-          response: `[${errorMessage}]  \n(${(new Date).toUTCString()})`, // Surround in square brackets to look like other messages
+          response: `[${errorMessage}]`, // Surround in square brackets to look like other errors
           behaviour: { response: "replacelast" }
         })
       }
