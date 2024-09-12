@@ -2419,12 +2419,20 @@ Query DALL·E via the `dalle` keyword.
 				<key>pairs</key>
 				<array>
 					<array>
+						<string>GPT-4o</string>
+						<string>gpt-4o</string>
+					</array>
+					<array>
 						<string>GPT-4o mini</string>
 						<string>gpt-4o-mini</string>
 					</array>
 					<array>
-						<string>GPT-4o</string>
-						<string>gpt-4o</string>
+						<string>o1</string>
+						<string>o1-preview</string>
+					</array>
+					<array>
+						<string>o1 mini</string>
+						<string>o1-mini</string>
 					</array>
 					<array>
 						<string>GPT-4</string>
@@ -2439,7 +2447,7 @@ Query DALL·E via the `dalle` keyword.
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>GPT Model</string>
+			<string>Model</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
