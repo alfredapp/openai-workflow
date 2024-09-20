@@ -2427,14 +2427,6 @@ Query DALL·E via the `dalle` keyword.
 						<string>gpt-4o-mini</string>
 					</array>
 					<array>
-						<string>o1</string>
-						<string>o1-preview</string>
-					</array>
-					<array>
-						<string>o1 mini</string>
-						<string>o1-mini</string>
-					</array>
-					<array>
 						<string>GPT-4</string>
 						<string>gpt-4</string>
 					</array>
