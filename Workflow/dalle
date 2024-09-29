@@ -76,7 +76,9 @@ function run(argv) {
   const maxEntries = 10
   const apiKey = envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
-  const apiEndpoint = envVar("dalle_api_endpoint") || "https://api.openai.com"
+  const apiEndpointInit = envVar("dalle_api_endpoint") || "https://api.openai.com/v1/images/completions"
+  const apiEndpointInitHasPath = apiEndpointInit.replace(/^https?:\/\//, "").includes("/")
+  const apiEndpoint = apiEndpointInitHasPath ? apiEndpointInit : `${apiEndpointInit}/v1/images/completions`
   const model = envVar("dalle_model")
   const imageNumber = parseInt(envVar("dalle_image_number"))
   const imageStyle = envVar("dalle_style")
@@ -115,7 +117,7 @@ function run(argv) {
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
-    `${apiEndpoint}/v1/images/generations`,
+    apiEndpoint,
     "--silent",
     "--header", "Content-Type: application/json",
     "--header", `Authorization: Bearer ${apiKey}`,

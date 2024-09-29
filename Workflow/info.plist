@@ -2680,11 +2680,11 @@ Query DALL·E via the `dalle` keyword.
 	<key>variables</key>
 	<dict>
 		<key>chatgpt_api_endpoint</key>
-		<string>https://api.openai.com</string>
+		<string>https://api.openai.com/v1/chat/completions</string>
 		<key>chatgpt_model_override</key>
 		<string></string>
 		<key>dalle_api_endpoint</key>
-		<string>https://api.openai.com</string>
+		<string>https://api.openai.com/v1/images/generations</string>
 	</dict>
 	<key>version</key>
 	<string>2024.16</string>

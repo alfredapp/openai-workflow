@@ -70,7 +70,7 @@ function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, con
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
-    `${apiEndpoint}/v1/chat/completions`,
+    apiEndpoint,
     "--speed-limit", "0", "--speed-time", "5", // Abort stalled connection after a few seconds
     "--silent", "--no-buffer",
     "--header", "Content-Type: application/json",
@@ -197,7 +197,9 @@ function run(argv) {
   const maxContext = parseInt(envVar("max_context"))
   const apiKey = envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
-  const apiEndpoint = envVar("chatgpt_api_endpoint") || "https://api.openai.com"
+  const apiEndpointInit = envVar("chatgpt_api_endpoint") || "https://api.openai.com/v1/chat/completions"
+  const apiEndpointInitHasPath = apiEndpointInit.replace(/^https?:\/\//, "").includes("/")
+  const apiEndpoint = apiEndpointInitHasPath ? apiEndpointInit : `${apiEndpointInit}/v1/chat/completions`
   const systemPrompt = envVar("system_prompt")
   const model = envVar("chatgpt_model_override") ? envVar("chatgpt_model_override") : envVar("gpt_model")
   const chatFile = `${envVar("alfred_workflow_data")}/chat.json`
