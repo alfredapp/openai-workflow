@@ -38,10 +38,54 @@ function appendChat(path, message) {
   writeFile(path, chatString)
 }
 
+function escapeMarkdownCodeBlocks(markdownText) {
+  if (!markdownText.includes("```markdown")) return markdownText;
+
+  const codeBlockMarkerRegex = /^\s{0,3}```(\w*)/gm;
+  let match;
+  let openCodeBlocks = [];
+  let markdownBlocks = []
+  while((match = codeBlockMarkerRegex.exec(markdownText)) !== null) {
+    const nextLine = markdownText.slice(match.index + match[0].length + 1).match(/^.*$/m);
+    const nextLineEmptyOrClosing = nextLine === null || nextLine[0].trim() === "" || nextLine[0].trim() === "```"; // Empty line or closing code block
+    const markerIsAnnotated = match[1] != "";
+    if (markerIsAnnotated || !nextLineEmptyOrClosing || openCodeBlocks.length === 0) {
+      // Open a new code block
+      openCodeBlocks.push({type: match[1], index: match.index, matchLength: match[0].length});
+    } else {
+      // Close the code block
+      const closed = openCodeBlocks.pop();
+      if (closed.type === "markdown") {
+        markdownBlocks.push({start: closed.index, startLength: closed.matchLength, end: match.index + match[0].length + 1, endLength: match[0].length});
+      }
+    }
+  }
+  // console.log(JSON.stringify(openCodeBlocks.map(block => `[${block.type}] ${markdownText.slice(block.index, block.index + 30)}`), null, 2));
+  // console.log(JSON.stringify(markdownBlocks.map(block => `${markdownText.slice(block.start, block.start + 30)} ... ${markdownText.slice(block.end - 30, block.end)}`), null, 2));
+
+  function indentText(text) {
+    const lines = text.split("\n")
+    return lines.length === 1 ? lines[0] : lines.slice(0,-1).map(line => ` ${line}`).join("\n") + "\n" + lines[lines.length - 1];
+  }
+
+  for (let i = markdownBlocks.length - 1; i >= 0; i--) {
+    const block = markdownBlocks[i];
+    markdownText = (
+      markdownText.slice(0, block.start)
+      + "```markdown"
+      + indentText(markdownText.slice(block.start + block.startLength, block.end - block.endLength - 1))
+      + "```\n"
+      + markdownText.slice(block.end)
+    );
+  }
+
+  return markdownText;
+}
+
 function markdownChat(messages, ignoreLastInterrupted = true) {
   return messages.reduce((accumulator, current, index, allMessages) => {
     if (current["role"] === "assistant")
-      return `${accumulator}${current["content"]}\n\n`
+      return `${accumulator}${escapeMarkdownCodeBlocks(current["content"])}\n\n`
 
     if (current["role"] === "user") {
       const userMessage = current["content"].split("\n").map(line => `### ${line}`).join("\n") // support multi-line questions (e.g. via External Trigger)
@@ -146,7 +190,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
 
     // Stop
     return JSON.stringify({
-      response: `${responseText} [Connection Stalled]`,
+      response: `${escapeMarkdownCodeBlocks(responseText)} [Connection Stalled]`,
       footer: "You can ask ChatGPT to continue the answer",
       behaviour: { response: "replacelast", scroll: "end" }
     })
@@ -165,7 +209,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
   if (finishReason === null) return JSON.stringify({
     rerun: 0.1,
     variables: { streaming_now: true },
-    response: responseText,
+    response: escapeMarkdownCodeBlocks(responseText),
     behaviour: { response: "replacelast", scroll: "end" }
   })
 
@@ -184,7 +228,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
 
   // Stop
   return JSON.stringify({
-    response: responseText,
+    response: escapeMarkdownCodeBlocks(responseText),
     footer: footerText,
     behaviour: { response: "replacelast", scroll: "end" }
   })
