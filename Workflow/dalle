@@ -74,7 +74,7 @@ function markdownImage(path) {
 function run(argv) {
   const typedQuery = argv[0]
   const maxEntries = 10
-  const apiKey = envVar("openai_api_key")
+  const apiKey = envVar("dalle_api_key") || envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpointInit = envVar("dalle_api_endpoint") || "https://api.openai.com/v1/images/completions"
   const apiEndpointInitHasPath = apiEndpointInit.replace(/^https?:\/\//, "").includes("/")
