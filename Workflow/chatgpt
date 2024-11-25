@@ -162,7 +162,7 @@ function readStream(streamFile, chatFile, pidStreamFile) {
   const finishReason = chunks.slice(-1)[0]["choices"][0]["finish_reason"]
 
   // If reponse is not finished, continue loop
-  if (finishReason === null) return JSON.stringify({
+  if (!finishReason) return JSON.stringify({
     rerun: 0.1,
     variables: { streaming_now: true },
     response: responseText,
