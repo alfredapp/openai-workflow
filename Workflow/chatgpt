@@ -44,7 +44,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
       return `${accumulator}${current["content"]}\n\n`
 
     if (current["role"] === "user") {
-      const userMessage = current["content"].split("\n").map(line => `### ${line}`).join("\n") // support multi-line questions (e.g. via External Trigger)
+      const userMessage = `# ⊙ You\n\n${current["content"]}\n\n# ⊚ Assistant`
       const userTwice = allMessages[index + 1]?.["role"] === "user" // "user" role twice in a row
       const lastMessage = index === allMessages.length - 1 // "user is last message
 
