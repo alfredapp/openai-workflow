@@ -58,7 +58,7 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
   }, "")
 }
 
-function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile) {
+function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile, timeoutSeconds) {
   $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined) // Create empty file
 
   const messages = systemPrompt ?
@@ -71,7 +71,7 @@ function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, con
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
     apiEndpoint,
-    "--speed-limit", "0", "--speed-time", "5", // Abort stalled connection after a few seconds
+    "--speed-limit", "0", "--speed-time", timeoutSeconds.toString(), // Abort stalled connection after a few seconds
     "--silent", "--no-buffer",
     "--header", "Content-Type: application/json",
     "--header", `Authorization: Bearer ${apiKey}`,
@@ -84,7 +84,7 @@ function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, con
   writeFile(pidStreamFile, task.processIdentifier.toString())
 }
 
-function readStream(streamFile, chatFile, pidStreamFile) {
+function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
   const streamMarker = envVar("stream_marker") === "1"
   const streamString = $.NSString.stringWithContentsOfFileEncodingError(streamFile, $.NSUTF8StringEncoding, undefined).js
 
@@ -133,8 +133,8 @@ function readStream(streamFile, chatFile, pidStreamFile) {
 
   const responseText = chunks.map(item => item["choices"][0]?.["delta"]["content"]).join("")
 
-  // If File not modified for over 5 seconds, connection stalled
-  const stalled = new Date().getTime() - fileModified(streamFile) > 5000
+  // If File not modified for over a few seconds, connection stalled
+  const stalled = new Date().getTime() - fileModified(streamFile) > timeoutSeconds * 1000
 
   if (stalled) {
     // Write incomplete response
@@ -195,6 +195,7 @@ function run(argv) {
   // Constant data
   const typedQuery = argv[0]
   const maxContext = parseInt(envVar("max_context"))
+  const timeoutSeconds = parseInt(envVar("timeout_seconds"))
   const apiKey = envVar("openai_api_key")
   const apiOrgHeader = envVar("openai_org_id") ? ["--header", `OpenAI-Organization: ${envVar("openai_org_id")}`] : []
   const apiEndpointInit = envVar("chatgpt_api_endpoint") || "https://api.openai.com/v1/chat/completions"
@@ -208,7 +209,7 @@ function run(argv) {
   const streamingNow = envVar("streaming_now") === "1"
 
   // If continually reading from a stream, continue that loop
-  if (streamingNow) return readStream(streamFile, chatFile, pidStreamFile)
+  if (streamingNow) return readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds)
 
   // Load previous conversation
   const previousChat = readChat(chatFile)
@@ -234,7 +235,7 @@ function run(argv) {
   const contextChat = ongoingChat.slice(-maxContext)
 
   // Make API request, write chat file, and start loop
-  startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile)
+  startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile, timeoutSeconds)
   appendChat(chatFile, appendQuery)
 
   return JSON.stringify({

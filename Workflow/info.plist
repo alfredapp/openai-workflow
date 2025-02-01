@@ -2469,6 +2469,31 @@ Query DALL·E via the `dalle` keyword.
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>defaultvalue</key>
+				<integer>10</integer>
+				<key>markercount</key>
+				<integer>6</integer>
+				<key>maxvalue</key>
+				<integer>30</integer>
+				<key>minvalue</key>
+				<integer>5</integer>
+				<key>onlystoponmarkers</key>
+				<true/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>How many seconds to wait before giving up connection.</string>
+			<key>label</key>
+			<string>Timeout</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>timeout_seconds</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>default</key>
 				<string></string>
 				<key>required</key>
