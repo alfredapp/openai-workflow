@@ -36,7 +36,7 @@ You need API credits to use the workflow. You can [view your remaining credits a
 
 ### Why do I keep getting `[Connection Stalled]`?
 
-This happens when the workflow takes too long to receive a reply from the API. It indicates a problem either with your connection or OpenAI’s service.
+This happens when the workflow takes too long to receive a reply from the API. Try increasing the timeout in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/). If the problem persists, it indicates a problem either with your connection or OpenAI’s service.
 
 [Open a terminal](https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac) and run the following (replace `YOUR_API_KEY` within the quotes with your API key):
 
