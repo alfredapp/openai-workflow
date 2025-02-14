@@ -86,7 +86,6 @@ function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, con
 
 function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
   const streamMarker = envVar("stream_marker") === "1"
-  const streamString = $.NSString.stringWithContentsOfFileEncodingError(streamFile, $.NSUTF8StringEncoding, undefined).js
 
   // When starting a stream or continuing from a closed window, add a marker to determine the location of future replacements
   if (streamMarker) return JSON.stringify({
@@ -95,6 +94,8 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
     response: "…",
     behaviour: { response: "append" }
   })
+
+  const streamString = $.NSString.stringWithContentsOfFileEncodingError(streamFile, $.NSUTF8StringEncoding, undefined).js
 
   // If response looks like proper JSON, it is probably an error
   if (streamString.startsWith("{")) {
