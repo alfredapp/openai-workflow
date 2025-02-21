@@ -27,6 +27,25 @@ function writeFile(path, text) {
   $(text).writeToFileAtomicallyEncodingError(path, true, $.NSUTF8StringEncoding, undefined)
 }
 
+function readFile(path) {
+  return $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, undefined).js
+}
+
+function killProcess(pid) {
+  const task = $.NSTask.alloc.init
+  task.executableURL = $.NSURL.fileURLWithPath("/bin/kill")
+  task.arguments = [pid.toString()]
+  task.launchAndReturnError(false)
+}
+
+function forcedCleanup(pidStreamFile, streamFile) {
+  const pid = readFile(pidStreamFile)?.toString().trim()
+  if (pid) killProcess(pid)
+
+  deleteFile(pidStreamFile)
+  deleteFile(streamFile)
+}
+
 function readChat(path) {
   const chatString = $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, undefined).js
   return JSON.parse(chatString)
@@ -56,6 +75,40 @@ function markdownChat(messages, ignoreLastInterrupted = true) {
     // Ignore any other role
     return accumulator
   }, "")
+}
+
+function extractContentFromStreamString(streamString) {
+  if (streamString.startsWith("{")) return { contentText: "", finishReason: "" }
+
+  // Parse streaming response
+  const chunks = streamString
+    .split("\n") // Split into lines
+    .filter(item => item) // Remove empty lines
+    .map(item => item.replace(/^data: /, "")) // Remove extraneous "data: "
+    .flatMap(item => { try { return JSON.parse(item) } catch { return [] } }) // Parse as JSON
+
+  // extract content, filter out null values
+  const contentText = chunks
+    .map(item => item["choices"]?.[0]?.["delta"]["content"])
+    .filter(content => content != null)
+    .join("")
+
+  // get finish reason of the last token
+  const finishReason = chunks.length > 0 
+    ? chunks.at(-1)?.choices?.[0]?.finish_reason ?? ""
+    : ""
+
+  return {
+    contentText,
+    finishReason
+  }
+}
+
+function flushStreamToChatFile(streamFile, chatFile) {
+  const streamContent = $.NSString.stringWithContentsOfFileEncodingError(streamFile, $.NSUTF8StringEncoding, undefined).js
+  const { contentText, finishReason } = extractContentFromStreamString(streamContent)
+
+  appendChat(chatFile, { role: "assistant", content: contentText.concat(finishReason ? "" : "\n\n[Answer Interrupted]\n\n") })
 }
 
 function startStream(apiEndpoint, apiKey, apiOrgHeader, model, systemPrompt, contextChat, streamFile, pidStreamFile, timeoutSeconds) {
@@ -124,14 +177,7 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
     }
   }
 
-  // Parse streaming response
-  const chunks = streamString
-    .split("\n") // Split into lines
-    .filter(item => item) // Remove empty lines
-    .map(item => item.replace(/^data: /, "")) // Remove extraneous "data: "
-    .flatMap(item => { try { return JSON.parse(item) } catch { return [] } }) // Parse as JSON
-
-  const responseText = chunks.map(item => item["choices"][0]?.["delta"]["content"]).join("")
+  const { contentText: responseText, finishReason } = extractContentFromStreamString(streamString)
 
   // If File not modified for over a few seconds, connection stalled
   const stalled = new Date().getTime() - fileModified(streamFile) > timeoutSeconds * 1000
@@ -158,9 +204,6 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
     variables: { streaming_now: true }
   })
 
-  // Last token finish reason
-  const finishReason = chunks.slice(-1)[0]["choices"][0]["finish_reason"]
-
   // If reponse is not finished, continue loop
   if (!finishReason) return JSON.stringify({
     rerun: 0.1,
@@ -177,7 +220,7 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
   // Mention finish reason in footer
   const footerText = (function() {
     switch (finishReason) {
-      case "legth": return "Maximum number of tokens reached"
+      case "length": return "Maximum number of tokens reached"
       case "content_filter": return "Content was omitted due to a flag from OpenAI content filters"
     }
   })()
@@ -211,17 +254,25 @@ function run(argv) {
   // If continually reading from a stream, continue that loop
   if (streamingNow) return readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds)
 
+  // If "streaming_now" is unset but stream file exists, the window was closed mid-stream
+  if (fileExists(streamFile)) {
+    // If user query is empty: reload conversation and rerun to resume stream
+    if (typedQuery.length === 0) return JSON.stringify({
+      rerun: 0.1,
+      variables: { streaming_now: true, stream_marker: true },
+      response: markdownChat(readChat(chatFile), true),
+      behaviour: { scroll: "end" }
+    })
+
+    // If user query is not empty: flush streamFile content to chatFile before proceeding current query
+    flushStreamToChatFile(streamFile, chatFile)
+
+    // stop previous streaming and remove files
+    forcedCleanup(pidStreamFile, streamFile)
+  }
+
   // Load previous conversation
   const previousChat = readChat(chatFile)
-
-  // If "streaming_now" is unset but stream file exists, the window was closed mid-stream
-  // Reload conversation and rerun to resume stream
-  if (fileExists(streamFile)) return JSON.stringify({
-    rerun: 0.1,
-    variables: { streaming_now: true, stream_marker: true },
-    response: markdownChat(previousChat, true),
-    behaviour: { scroll: "end" }
-  })
 
   // If argument is empty, return previous conversation
   if (typedQuery.length === 0) return JSON.stringify({
