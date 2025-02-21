@@ -132,42 +132,43 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
     .flatMap(item => { try { return JSON.parse(item) } catch { return [] } }) // Parse as JSON
 
   const responseText = chunks.map(item => item["choices"][0]?.["delta"]["content"]).join("")
+  const finishReason = chunks.slice(-1)[0]?.["choices"][0]["finish_reason"]
 
-  // If File not modified for over a few seconds, connection stalled
-  const stalled = new Date().getTime() - fileModified(streamFile) > timeoutSeconds * 1000
+  // If reponse is not finished
+  if (!finishReason) {
+    // If File not modified for over a few seconds, connection stalled
+    const stalled = new Date().getTime() - fileModified(streamFile) > timeoutSeconds * 1000
 
-  if (stalled) {
-    // Write incomplete response
-    if (responseText.length > 0) appendChat(chatFile, { role: "assistant", content: responseText })
+    if (stalled) {
+      // Write incomplete response
+      if (responseText.length > 0) appendChat(chatFile, { role: "assistant", content: responseText })
 
-    // Delete stream files
-    deleteFile(streamFile)
-    deleteFile(pidStreamFile)
+      // Delete stream files
+      deleteFile(streamFile)
+      deleteFile(pidStreamFile)
 
-    // Stop
+      // Stop
+      return JSON.stringify({
+        response: `${responseText} [Connection Stalled]`,
+        footer: "You can ask ChatGPT to continue the answer",
+        behaviour: { response: "replacelast", scroll: "end" }
+      })
+    }
+
+    // If file is empty, we were too fast and will try again on next loop
+    if (streamString.length === 0) return JSON.stringify({
+      rerun: 0.1,
+      variables: { streaming_now: true }
+    })
+
+    // Continue loop
     return JSON.stringify({
-      response: `${responseText} [Connection Stalled]`,
-      footer: "You can ask ChatGPT to continue the answer",
+      rerun: 0.1,
+      variables: { streaming_now: true },
+      response: responseText,
       behaviour: { response: "replacelast", scroll: "end" }
     })
   }
-
-  // If file is empty, we were too fast and will try again on next loop
-  if (streamString.length === 0) return JSON.stringify({
-    rerun: 0.1,
-    variables: { streaming_now: true }
-  })
-
-  // Last token finish reason
-  const finishReason = chunks.slice(-1)[0]["choices"][0]["finish_reason"]
-
-  // If reponse is not finished, continue loop
-  if (!finishReason) return JSON.stringify({
-    rerun: 0.1,
-    variables: { streaming_now: true },
-    response: responseText,
-    behaviour: { response: "replacelast", scroll: "end" }
-  })
 
   // When finished, write history and delete stream files
   appendChat(chatFile, { role: "assistant", content: responseText })
