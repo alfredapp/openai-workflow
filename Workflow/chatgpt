@@ -177,7 +177,7 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
   // Mention finish reason in footer
   const footerText = (function() {
     switch (finishReason) {
-      case "legth": return "Maximum number of tokens reached"
+      case "length": return "Maximum number of tokens reached"
       case "content_filter": return "Content was omitted due to a flag from OpenAI content filters"
     }
   })()
