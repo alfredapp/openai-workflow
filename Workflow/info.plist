@@ -2416,20 +2416,40 @@ Query DALL·E via the `dalle` keyword.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gpt-4o-mini</string>
+				<string>gpt-4.1-nano</string>
 				<key>pairs</key>
 				<array>
+					<array>
+						<string>GPT 4.1 nano</string>
+						<string>gpt-4.1-nano</string>
+					</array>
 					<array>
 						<string>GPT-4o mini</string>
 						<string>gpt-4o-mini</string>
 					</array>
 					<array>
-						<string>GPT-4o</string>
+						<string>GPT 4.1 mini</string>
+						<string>gpt-4.1-mini</string>
+					</array>
+					<array>
+						<string>GPT 4.1</string>
+						<string>gpt-4.1</string>
+					</array>
+					<array>
+						<string>GPT 4o</string>
 						<string>gpt-4o</string>
 					</array>
 					<array>
-						<string>o1 mini</string>
 						<string>o1-mini</string>
+						<string>o1-mini</string>
+					</array>
+					<array>
+						<string>o3-mini</string>
+						<string>o3-mini</string>
+					</array>
+					<array>
+						<string>o1</string>
+						<string>o1</string>
 					</array>
 				</array>
 			</dict>
@@ -2505,7 +2525,7 @@ Query DALL·E via the `dalle` keyword.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Initial message to guide ChatGPT on the answers you expect.</string>
+			<string>Initial message to guide ChatGPT on the answers you expect. Supported on select models.</string>
 			<key>label</key>
 			<string>System Prompt</string>
 			<key>type</key>
