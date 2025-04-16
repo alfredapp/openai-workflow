@@ -2448,6 +2448,10 @@ Query DALL·E via the `dalle` keyword.
 						<string>o3-mini</string>
 					</array>
 					<array>
+						<string>o4-mini</string>
+						<string>o4-mini</string>
+					</array>
+					<array>
 						<string>o1</string>
 						<string>o1</string>
 					</array>
