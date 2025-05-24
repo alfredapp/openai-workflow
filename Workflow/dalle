@@ -117,19 +117,20 @@ function run(argv) {
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
-    apiEndpoint,
-    "--silent",
-    "--header", "Content-Type: application/json",
-    "--header", `Authorization: Bearer ${apiKey}`,
-    "--data", JSON.stringify({
-      model: model,
-      prompt: typedQuery,
-      style: imageStyle,
-      quality: imageQuality,
-      n: imageNumber,
-      size: "1024x1024"
-    })
-  ].concat(apiOrgHeader)
+  apiEndpoint,
+  "--silent",
+  "--header", "Content-Type: application/json",
+  "--header", `Authorization: Bearer ${apiKey}`,
+  "--data", JSON.stringify({
+    model: model,
+    prompt: typedQuery,
+    // style: imageStyle,
+    // quality: imageQuality,
+    n: imageNumber,
+    size: "1024x1024"
+  })
+].concat(apiOrgHeader)
+
 
   task.standardOutput = stdout
   task.launchAndReturnError(false)
