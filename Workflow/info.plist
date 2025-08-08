@@ -2416,16 +2416,24 @@ Query DALL·E via the `dalle` keyword.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gpt-4.1-nano</string>
+				<string>gpt-5-nano</string>
 				<key>pairs</key>
 				<array>
 					<array>
-						<string>GPT 4.1 nano</string>
-						<string>gpt-4.1-nano</string>
+						<string>GPT 5 nano</string>
+						<string>gpt-5-nano</string>
 					</array>
 					<array>
-						<string>GPT-4o mini</string>
-						<string>gpt-4o-mini</string>
+						<string>GPT 5 mini</string>
+						<string>gpt-5-mini</string>
+					</array>
+					<array>
+						<string>GPT 5</string>
+						<string>gpt-5</string>
+					</array>
+					<array>
+						<string>GPT 4.1 nano</string>
+						<string>gpt-4.1-nano</string>
 					</array>
 					<array>
 						<string>GPT 4.1 mini</string>
@@ -2436,24 +2444,28 @@ Query DALL·E via the `dalle` keyword.
 						<string>gpt-4.1</string>
 					</array>
 					<array>
+						<string>GPT 4o mini</string>
+						<string>gpt-4o-mini</string>
+					</array>
+					<array>
 						<string>GPT 4o</string>
 						<string>gpt-4o</string>
 					</array>
 					<array>
-						<string>o1-mini</string>
-						<string>o1-mini</string>
-					</array>
-					<array>
-						<string>o3-mini</string>
-						<string>o3-mini</string>
-					</array>
-					<array>
-						<string>o4-mini</string>
-						<string>o4-mini</string>
-					</array>
-					<array>
 						<string>o1</string>
 						<string>o1</string>
+					</array>
+					<array>
+						<string>o3</string>
+						<string>o3</string>
+					</array>
+					<array>
+						<string>o3 mini</string>
+						<string>o3-mini</string>
+					</array>
+					<array>
+						<string>o4 mini</string>
+						<string>o4-mini</string>
 					</array>
 				</array>
 			</dict>
