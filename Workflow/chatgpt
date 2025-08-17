@@ -107,7 +107,7 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
         deleteFile(pidStreamFile)
 
         return JSON.stringify({
-          response: `[${errorMessage}]`, // Surround in square brackets to look like other errors
+          response: errorMessage,
           behaviour: { response: "replacelast" }
         })
       }
