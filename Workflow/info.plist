@@ -2614,13 +2614,9 @@ Query DALL·E via the `dalle` keyword.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>dall-e-2</string>
+				<string>dall-e-3</string>
 				<key>pairs</key>
 				<array>
-					<array>
-						<string>DALL·E 2</string>
-						<string>dall-e-2</string>
-					</array>
 					<array>
 						<string>DALL·E 3</string>
 						<string>dall-e-3</string>
@@ -2654,7 +2650,7 @@ Query DALL·E via the `dalle` keyword.
 				</array>
 			</dict>
 			<key>description</key>
-			<string>Only supported on DALL·E 3.</string>
+			<string></string>
 			<key>label</key>
 			<string>Style</string>
 			<key>type</key>
@@ -2680,38 +2676,13 @@ Query DALL·E via the `dalle` keyword.
 				</array>
 			</dict>
 			<key>description</key>
-			<string>Only supported on DALL·E 3.</string>
+			<string>Lower quality images cost less.</string>
 			<key>label</key>
 			<string>Quality</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>dalle_quality</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>defaultvalue</key>
-				<integer>1</integer>
-				<key>markercount</key>
-				<integer>10</integer>
-				<key>maxvalue</key>
-				<integer>10</integer>
-				<key>minvalue</key>
-				<integer>1</integer>
-				<key>onlystoponmarkers</key>
-				<true/>
-				<key>showmarkers</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>DALL·E 2 can generate up to 10 images. DALL·E 3 generates 1.</string>
-			<key>label</key>
-			<string>Count</string>
-			<key>type</key>
-			<string>slider</string>
-			<key>variable</key>
-			<string>dalle_image_number</string>
 		</dict>
 		<dict>
 			<key>config</key>

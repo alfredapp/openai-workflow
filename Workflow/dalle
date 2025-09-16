@@ -80,7 +80,6 @@ function run(argv) {
   const apiEndpointInitHasPath = apiEndpointInit.replace(/^https?:\/\//, "").includes("/")
   const apiEndpoint = apiEndpointInitHasPath ? apiEndpointInit : `${apiEndpointInit}/v1/images/generations`
   const model = envVar("dalle_model")
-  const imageNumber = parseInt(envVar("dalle_image_number"))
   const imageStyle = envVar("dalle_style")
   const imageQuality = envVar("dalle_quality")
   const parentFolder = envVar("dalle_images_folder")
@@ -126,7 +125,6 @@ function run(argv) {
       prompt: typedQuery,
       style: imageStyle,
       quality: imageQuality,
-      n: imageNumber,
       size: "1024x1024"
     })
   ].concat(apiOrgHeader)
