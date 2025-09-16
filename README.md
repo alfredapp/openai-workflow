@@ -37,7 +37,7 @@ View Chat History with ⌥↩ in the `chatgpt` keyword. Each result shows the fi
 
 ### DALL\267E
 
-Query DALL\267E via the `dalle` keyword.
+Query DALL-E via the `dalle` keyword.
 
 ![Start DALL-E query](Workflow/images/about/dallekeyword.png)
 

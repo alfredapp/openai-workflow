@@ -115,20 +115,28 @@ function run(argv) {
   const task = $.NSTask.alloc.init
   const stdout = $.NSPipe.pipe
 
+  const payload = {
+    model: model,
+    prompt: typedQuery,
+    style: imageStyle,
+    quality: imageQuality,
+    n: imageNumber,
+    size: "1024x1024"
+  }
+
+  // Remove incompatible params for DALL-E 2
+  if(!model.includes("dall-e-2") && imageStyle && imageQuality){
+    payload.style = imageStyle;
+    payload.quality = imageQuality; 
+  }
+
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
   task.arguments = [
     apiEndpoint,
     "--silent",
     "--header", "Content-Type: application/json",
     "--header", `Authorization: Bearer ${apiKey}`,
-    "--data", JSON.stringify({
-      model: model,
-      prompt: typedQuery,
-      style: imageStyle,
-      quality: imageQuality,
-      n: imageNumber,
-      size: "1024x1024"
-    })
+    "--data", JSON.stringify(payload)
   ].concat(apiOrgHeader)
 
   task.standardOutput = stdout
