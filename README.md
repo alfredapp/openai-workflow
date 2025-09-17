@@ -35,9 +35,9 @@ View Chat History with ⌥↩ in the `chatgpt` keyword. Each result shows the fi
 
 <kbd>↩</kbd> to archive the current chat and load the selected one. Older chats can be trashed with the `Delete` [Universal Action](https://www.alfredapp.com/help/features/universal-actions/). Select multiple chats with the [File Buffer](https://www.alfredapp.com/help/features/file-search/#file-buffer).
 
-### DALL\267E
+### DALL·E
 
-Query DALL\267E via the `dalle` keyword.
+Query DALL·E via the `dalle` keyword.
 
 ![Start DALL-E query](Workflow/images/about/dallekeyword.png)
 
