@@ -132,7 +132,7 @@ function readStream(streamFile, chatFile, pidStreamFile, timeoutSeconds) {
     .flatMap(item => { try { return JSON.parse(item) } catch { return [] } }) // Parse as JSON
 
   const responseText = chunks.map(item => item["choices"][0]?.["delta"]["content"]).join("")
-  const finishReason = chunks.slice(-1)[0]?.["choices"][0]["finish_reason"]
+  const finishReason = chunks.length > 0 ? chunks.slice(-1)[0]?.["choices"]?.[0]?.["finish_reason"] : null
 
   // If reponse is not finished
   if (!finishReason) {
